@@ -1,0 +1,24 @@
+my-bakery-site/
+├── index.html        ← The complete merged HTML file
+├── style.css          ← All CSS (custom properties, components, responsive)
+├── main.js            ← All JavaScript (cart, filters, countdown, animations, etc.)
+└── assets/            ← Your image folder
+    ├── hero-cupcake.png
+    ├── about-main.jpg
+    ├── about-decorating.jpg
+    ├── cupcakes-band.png
+    ├── cookies-band.png
+    ├── catering-band.png
+    ├── seasonal-cupcakes.png
+    ├── product1.jpg
+    ├── product2.jpg
+    ├── product3.jpg
+    ├── product4.jpg
+    ├── product5.jpg
+    ├── product6.jpg
+    ├── product7.jpg
+    ├── product8.jpg
+    ├── gallery1.jpg
+    ├── gallery2.jpg
+    ├── gallery3.jpg
+    └── gallery4.jpg
