@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJs Cakery, Handcrafted Cakes and Cupcakes</title>
+<title>AJs Cakery | Custom Celebration Cakes in Blantyre</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
 <link rel="alternate icon" href="data:image/png;base64,iVBORw0KGgo=">
-<meta name="description" content="AJs Cakery - Baked with love in Blantyre. Handcrafted cakes, cupcakes, and treats for every occasion. Order online now.">
+<meta name="description" content="Custom celebration cakes in Blantyre — birthdays, weddings & corporate events. Handcrafted by AJ. Order via WhatsApp: +265 992 030 757">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,20 +24,20 @@ box-sizing: border-box;
 }
 :root {
 /* Color System: Warm Pink Palette */
---pink-50: #FFF0F5;   /* page background */
---pink-100: #FFE0EC;   /* section alt background */
---pink-200: #FFB8D2;   /* borders, dividers */
---pink-400: #FF6B9D;   /* primary accent */
---pink-600: #E0457A;   /* hover states */
---pink-900: #6B1535;   /* dark text on light */
+--pink-50: #FFF0F5;
+--pink-100: #FFE0EC;
+--pink-200: #FFB8D2;
+--pink-400: #FF6B9D;
+--pink-600: #E0457A;
+--pink-900: #6B1535;
 
---cream: #FFF8F0;   /* warmest background tone */
---peach: #FFD6B8;   /* soft highlight */
---gold: #F5C842;   /* star ratings, badges */
---rose: #FF8FAB;   /* secondary pink */
+--cream: #FFF8F0;
+--peach: #FFD6B8;
+--gold: #F5C842;
+--rose: #FF8FAB;
 
 --white: #FFFFFF;
---text: #2D1B2E;   /* very dark plum */
+--text: #2D1B2E;
 --text-mid: #7D5C6A;
 --text-soft: #B899A6;
 
@@ -73,10 +73,7 @@ box-sizing: border-box;
 --base: 400ms var(--ease);
 }
 
-html {
-scroll-behavior: smooth;
--webkit-font-smoothing: antialiased;
-}
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
 font-family: var(--font-body);
 font-size: 16px;
@@ -85,41 +82,16 @@ color: var(--text);
 background-color: var(--pink-50);
 overflow-x: hidden;
 }
-img {
-max-width: 100%;
-height: auto;
-display: block;
-}
-a {
-text-decoration: none;
-color: inherit;
-transition: color var(--fast);
-}
-button {
-cursor: pointer;
-border: none;
-background: none;
-font-family: inherit;
-font-size: inherit;
-color: inherit;
-}
-ul, ol {
-list-style: none;
-}
-input, textarea {
-font-family: inherit;
-font-size: inherit;
-}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: color var(--fast); }
+button { cursor: pointer; border: none; background: none; font-family: inherit; font-size: inherit; color: inherit; }
+ul, ol { list-style: none; }
+input, textarea { font-family: inherit; font-size: inherit; }
 
 /* ============================================
 UTILITY CLASSES
 ============================================ */
-.container {
-width: 100%;
-max-width: 1280px;
-margin: 0 auto;
-padding: 0 32px;
-}
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 .section { padding: var(--section-gap) 0; }
 .text-center { text-align: center; }
 .mx-auto { margin-left: auto; margin-right: auto; }
@@ -153,8 +125,15 @@ background: transparent; border: 2px solid var(--pink-400); color: var(--pink-40
 .btn-ghost:hover { color: var(--pink-400); }
 .btn-sm { padding: 10px 24px; font-size: 0.875rem; }
 .btn-lg { padding: 16px 40px; font-size: 1rem; }
+.btn-full { width: 100%; }
 .btn svg { width: 18px; height: 18px; transition: transform var(--fast); }
 .btn:hover svg { transform: translateX(4px); }
+
+/* WhatsApp Button */
+.btn-whatsapp {
+background: #25D366; color: white; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4); }
 
 /* ============================================
 NAVIGATION
@@ -281,6 +260,13 @@ animation: float 5s ease-in-out infinite;
 .hero__floating-text { font-size: 0.85rem; font-weight: 600; color: var(--text); }
 .hero__floating-sub { font-size: 0.7rem; color: var(--text-soft); }
 
+/* Price Banner */
+.price-banner {
+background: var(--pink-100); border-left: 4px solid var(--pink-400);
+padding: 16px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+margin: 24px 0; font-size: 0.9rem; color: var(--text);
+}
+
 /* ============================================
 MARQUEE / TRUST STRIP
 ============================================ */
@@ -328,6 +314,7 @@ border-radius: var(--radius-full); letter-spacing: 0.05em;
 .product-card__rating { display: flex; align-items: center; gap: 4px; font-size: 0.75rem; color: var(--text-soft); margin-bottom: 12px; }
 .product-card__rating svg { width: 14px; height: 14px; color: var(--gold); fill: var(--gold); }
 .product-card__price { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; }
+.product-card__price-note { font-size: 0.8rem; color: var(--text-soft); font-weight: 400; }
 .product-card__add {
 width: 100%; margin-top: 16px; padding: 12px; background: var(--pink-50); border: 1px solid var(--pink-100);
 border-radius: var(--radius-sm); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -335,6 +322,19 @@ transition: all var(--fast);
 }
 .product-card__add:hover { background: var(--pink-400); color: var(--white); border-color: var(--pink-400); }
 .product-card__add svg { width: 16px; height: 16px; }
+
+/* ============================================
+CUSTOM ORDER WORKFLOW SECTION
+============================================ */
+.custom-order { background: var(--cream); }
+.custom-order__steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 32px; margin-top: 48px; }
+.custom-order__step { text-align: center; }
+.custom-order__icon {
+width: 64px; height: 64px; background: var(--pink-100); border-radius: 50%;
+display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px;
+}
+.custom-order__step h3 { margin-bottom: 8px; }
+.custom-order__step p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.6; }
 
 /* ============================================
 ABOUT / STORY SECTION
@@ -536,11 +536,15 @@ AJs <span>Cakery</span>
 <div class="nav__links">
 <a href="#home" class="nav__link active">Home</a>
 <a href="#products" class="nav__link">Menu</a>
+<a href="#custom-order" class="nav__link">Custom Orders</a>
 <a href="#about" class="nav__link">Our Story</a>
 <a href="#testimonials" class="nav__link">Reviews</a>
-<a href="#contact" class="nav__link">Contact</a>
 </div>
 <div class="nav__actions">
+<a href="https://wa.me/265992030757" class="btn btn-whatsapp btn-sm" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+WhatsApp
+</a>
 <button class="nav__cart" id="cartToggle" aria-label="Shopping cart">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
 <span class="nav__badge" id="cartBadge">0</span>
@@ -557,10 +561,10 @@ AJs <span>Cakery</span>
 <div class="mobile-menu" id="mobileMenu">
 <a href="#home" class="nav__link" data-mobile-link>Home</a>
 <a href="#products" class="nav__link" data-mobile-link>Menu</a>
+<a href="#custom-order" class="nav__link" data-mobile-link>Custom Orders</a>
 <a href="#about" class="nav__link" data-mobile-link>Our Story</a>
 <a href="#testimonials" class="nav__link" data-mobile-link>Reviews</a>
-<a href="#contact" class="nav__link" data-mobile-link>Contact</a>
-<a href="#products" class="btn btn-primary btn-lg" data-mobile-link>Order Now</a>
+<a href="https://wa.me/265992030757" class="btn btn-whatsapp btn-lg" data-mobile-link target="_blank">Order via WhatsApp</a>
 </div>
 
 <!-- Cart Drawer -->
@@ -573,14 +577,14 @@ AJs <span>Cakery</span>
 </button>
 </div>
 <div class="cart-drawer__body" id="cartBody">
-<div class="cart-drawer__empty">Your cart is empty. Time for a treat! 🎂</div>
+<div class="cart-drawer__empty">Your celebration starts here — browse our collection 🎂</div>
 </div>
 <div class="cart-drawer__footer">
 <div class="cart-drawer__total">
 <span>Total</span>
-<span id="cartTotal">MK 0.00</span>
+<span id="cartTotal">MWK 0</span>
 </div>
-<button class="btn btn-primary btn-full">Checkout</button>
+<a href="https://wa.me/265992030757?text=Hi%20AJ%2C%20I%27d%20like%20to%20complete%20my%20order%20from%20your%20website." class="btn btn-primary btn-full" target="_blank">Checkout via WhatsApp</a>
 </div>
 </div>
 </div>
@@ -597,22 +601,28 @@ HERO SECTION
 Freshly baked every morning in Blantyre
 </div>
 <h1 class="hero__title">
-Life is <i>Sweet</i> with<br>AJs Cakery
+Cakes Made to <i>Remember</i>
 </h1>
 <p class="hero__desc">
-Handcrafted with love using the finest organic ingredients. Each cupcake and cake is a little masterpiece of joy, baked fresh daily in our sunny kitchen for your delight.
+Custom celebration cakes for birthdays, weddings, graduations & the moments that matter. Handcrafted in Blantyre — delivered on time, exactly as you pictured.
 </p>
+<div class="price-banner">
+<strong>Quick pricing:</strong> Cupcake boxes from MWK 30,000 | Custom cakes from MWK 85,000 | Corporate orders quoted individually
+</div>
 <div class="hero__actions">
 <a href="#products" class="btn btn-primary btn-lg">
-Explore Menu
+Plan Your Celebration
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 </a>
-<a href="#about" class="btn btn-outline btn-lg">Our Story</a>
+<a href="https://wa.me/265992030757" class="btn btn-whatsapp btn-lg" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+Chat to Order
+</a>
 </div>
 <div class="hero__stats">
 <div class="hero__stat">
 <div class="hero__stat-number">50+</div>
-<div class="hero__stat-label">Unique Flavors</div>
+<div class="hero__stat-label">Unique Flavours</div>
 </div>
 <div class="hero__stat">
 <div class="hero__stat-number">10K+</div>
@@ -654,7 +664,7 @@ TRUST MARQUEE
 <div class="marquee__track">
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-100% Organic Ingredients
+100% Local Ingredients
 </div>
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -666,7 +676,7 @@ Happiness Guaranteed
 </div>
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-Same Day Delivery
+Blantyre Delivery
 </div>
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -675,7 +685,7 @@ Small Batch Baking
 <!-- Duplicate for seamless loop -->
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-100% Organic Ingredients
+100% Local Ingredients
 </div>
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -687,7 +697,7 @@ Happiness Guaranteed
 </div>
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-Same Day Delivery
+Blantyre Delivery
 </div>
 <div class="marquee__item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -705,54 +715,55 @@ PRODUCTS SECTION
 <div>
 <span class="script">Our Menu</span>
 <h2>Signature Collection</h2>
-<p class="lead" style="margin:0">Discover our most loved flavors, each crafted with premium ingredients and a touch of magic.</p>
+<p class="lead" style="margin:0">Discover our most loved flavours, each crafted with premium ingredients and a touch of magic.</p>
 </div>
 <div class="products__filters">
 <button class="filter-btn active" data-filter="all">All</button>
-<button class="filter-btn" data-filter="classic">Classic</button>
-<button class="filter-btn" data-filter="premium">Premium</button>
+<button class="filter-btn" data-filter="birthdays">Birthdays</button>
+<button class="filter-btn" data-filter="weddings">Weddings</button>
+<button class="filter-btn" data-filter="corporate">Corporate</button>
 <button class="filter-btn" data-filter="seasonal">Seasonal</button>
 </div>
 </div>
 <div class="products__grid">
 <!-- Product 1 -->
-<div class="product-card fade-in" data-category="premium">
+<div class="product-card fade-in" data-category="birthdays">
 <div class="product-card__img-wrapper">
 <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="AJs Cakery Birthday Bash Cupcake" class="product-card__img" loading="lazy">
 <span class="product-card__badge">Popular</span>
 </div>
 <div class="product-card__content">
-<div class="product-card__cat">Premium</div>
+<div class="product-card__cat">Birthday</div>
 <h3 class="product-card__name">Birthday Bash</h3>
 <p class="product-card__desc">Golden raspberry swirl with edible gold flakes and fresh berries.</p>
 <div class="product-card__rating">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 4.9 (128)
 </div>
-<div class="product-card__price">MK 6.50</div>
-<button class="product-card__add" data-name="Birthday Bash" data-price="6.50" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png">
+<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
+<button class="product-card__add" data-name="Birthday Bash" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Add to Cart
+Enquire via WhatsApp
 </button>
 </div>
 </div>
 <!-- Product 2 -->
-<div class="product-card fade-in" data-category="classic">
+<div class="product-card fade-in" data-category="weddings">
 <div class="product-card__img-wrapper">
 <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="AJs Cakery Chocolate Truffle Cupcake" class="product-card__img" loading="lazy">
 </div>
 <div class="product-card__content">
-<div class="product-card__cat">Classic</div>
+<div class="product-card__cat">Wedding</div>
 <h3 class="product-card__name">Chocolate Truffle</h3>
 <p class="product-card__desc">Rich Belgian chocolate ganache with a dark chocolate curl.</p>
 <div class="product-card__rating">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 5.0 (204)
 </div>
-<div class="product-card__price">MK 5.50</div>
-<button class="product-card__add" data-name="Chocolate Truffle" data-price="5.50" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png">
+<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
+<button class="product-card__add" data-name="Chocolate Truffle" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Add to Cart
+Enquire via WhatsApp
 </button>
 </div>
 </div>
@@ -770,39 +781,72 @@ Add to Cart
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 4.8 (85)
 </div>
-<div class="product-card__price">MK 5.00</div>
-<button class="product-card__add" data-name="Lemon Zest" data-price="5.00" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png">
+<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
+<button class="product-card__add" data-name="Lemon Zest" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Add to Cart
+Enquire via WhatsApp
 </button>
 </div>
 </div>
 <!-- Product 4 -->
-<div class="product-card fade-in" data-category="classic">
+<div class="product-card fade-in" data-category="birthdays">
 <div class="product-card__img-wrapper">
 <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="AJs Cakery Strawberry Dream Cupcake" class="product-card__img" loading="lazy">
 </div>
 <div class="product-card__content">
-<div class="product-card__cat">Classic</div>
+<div class="product-card__cat">Birthday</div>
 <h3 class="product-card__name">Strawberry Dream</h3>
 <p class="product-card__desc">Fresh strawberry frosting with a whole cherry on top.</p>
 <div class="product-card__rating">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 4.7 (150)
 </div>
-<div class="product-card__price">MK 4.50</div>
-<button class="product-card__add" data-name="Strawberry Dream" data-price="4.50" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
+<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
+<button class="product-card__add" data-name="Strawberry Dream" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Add to Cart
+Enquire via WhatsApp
 </button>
 </div>
 </div>
 </div>
 <div class="text-center fade-in" style="margin-top: 64px;">
-<a href="#" class="btn btn-outline btn-lg">
-View All Products
+<a href="https://wa.me/265992030757" class="btn btn-outline btn-lg" target="_blank">
+View Full Menu on WhatsApp
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 </a>
+</div>
+</div>
+</section>
+
+<!-- ==========================================
+CUSTOM ORDER WORKFLOW SECTION
+========================================== -->
+<section class="section custom-order" id="custom-order">
+<div class="container">
+<div class="text-center fade-in">
+<span class="script">Your Vision, Our Craft</span>
+<h2>How Custom Orders Work</h2>
+<p class="lead">Three simple steps to a cake that's uniquely yours.</p>
+</div>
+<div class="custom-order__steps">
+<div class="custom-order__step fade-in">
+<div class="custom-order__icon">💬</div>
+<h3 style="margin-bottom:8px">1. Tell Us Your Vision</h3>
+<p style="color:var(--text-mid); font-size:0.95rem">DM us on WhatsApp or Instagram with your event details, theme, and preferences.</p>
+</div>
+<div class="custom-order__step fade-in">
+<div class="custom-order__icon">🎨</div>
+<h3 style="margin-bottom:8px">2. We Design & Confirm</h3>
+<p style="color:var(--text-mid); font-size:0.95rem">You'll receive a mockup and quote within 24 hours. No surprises — just clarity.</p>
+</div>
+<div class="custom-order__step fade-in">
+<div class="custom-order__icon">🎂</div>
+<h3 style="margin-bottom:8px">3. We Deliver, You Shine</h3>
+<p style="color:var(--text-mid); font-size:0.95rem">Your cake arrives fresh, on time, and ready to be the highlight of your event.</p>
+</div>
+</div>
+<div class="text-center" style="margin-top:40px">
+<a href="https://wa.me/265992030757" class="btn btn-primary" target="_blank">Start Your Custom Order</a>
 </div>
 </div>
 </section>
@@ -821,52 +865,51 @@ ABOUT SECTION
 <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1210dccee-413b-4a4e-814c-ccb3a78d291c.png" alt="AJs Cakery Pink Sprinkles Detail" loading="lazy">
 </div>
 <div class="about__experience">
-<span class="about__exp-number">15</span>
-<span class="about__exp-text">Years of<br>Experience</span>
+<span class="about__exp-number">1:1</span>
+<span class="about__exp-text">Personal<br>Service</span>
 </div>
 </div>
 <div class="about__content fade-in">
-<span class="script">Our Story</span>
-<h2>Baking Happiness Since 2009</h2>
+<span class="script">One Baker, One Promise</span>
+<h2>Every Cake Is Made by Someone Who Cares</h2>
 <p class="about__text">
-What started as a small kitchen experiment has blossomed into a beloved cakery. We believe that every cupcake should be a little moment of joy — baked with the finest organic ingredients, crafted by hand, and decorated with love.
+I'm AJ — the hands behind every cake, the eyes checking every detail. No factories, no shortcuts. Just one person in a Blantyre kitchen, making sure your celebration cake turns out exactly how you dreamed.
 </p>
 <p class="about__text">
-Our recipes have been perfected over 15 years, combining traditional techniques with creative modern flavors. From classic vanilla to exotic matcha, there's a cupcake for every occasion.
+When you order from AJs Cakery, you're not getting a faceless brand. You're getting a partner who remembers your event matters.
 </p>
 <div class="about__features">
 <div class="about__feat">
+<div class="about__feat-icon">✨</div>
+<div>
+<div class="about__feat-title">Made Just for You</div>
+<div class="about__feat-desc">Custom designs, your colours, your theme</div>
+</div>
+</div>
+<div class="about__feat">
+<div class="about__feat-icon">✅</div>
+<div>
+<div class="about__feat-title">On-Time Guarantee</div>
+<div class="about__feat-desc">Your cake arrives when promised — or it's on us</div>
+</div>
+</div>
+<div class="about__feat">
 <div class="about__feat-icon">🌿</div>
 <div>
-<div class="about__feat-title">Organic Ingredients</div>
-<div class="about__feat-desc">Only the finest natural ingredients</div>
-</div>
-</div>
-<div class="about__feat">
-<div class="about__feat-icon">👩‍🍳</div>
-<div>
-<div class="about__feat-title">Handcrafted</div>
-<div class="about__feat-desc">Each cupcake made by hand with care</div>
-</div>
-</div>
-<div class="about__feat">
-<div class="about__feat-icon">🚚</div>
-<div>
-<div class="about__feat-title">Fast Delivery</div>
-<div class="about__feat-desc">Same-day delivery for local orders</div>
+<div class="about__feat-title">Local Ingredients</div>
+<div class="about__feat-desc">Supporting Malawian suppliers where possible</div>
 </div>
 </div>
 <div class="about__feat">
 <div class="about__feat-icon">🎁</div>
 <div>
 <div class="about__feat-title">Gift Packaging</div>
-<div class="about__feat-desc">Beautiful packaging for special occasions</div>
+<div class="about__feat-desc">Beautiful presentation for special occasions</div>
 </div>
 </div>
 </div>
-<a href="#" class="btn btn-primary btn-lg">
-Learn More About Us
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+<a href="https://wa.me/265992030757" class="btn btn-primary btn-lg" target="_blank">
+Chat About Your Event
 </a>
 </div>
 </div>
@@ -881,9 +924,9 @@ OFFER BANNER
 <div class="offer__card fade-in">
 <div class="offer__content">
 <div class="offer__discount">20% Off</div>
-<h2 class="offer__title">Summer Cupcake Special</h2>
+<h2 class="offer__title">Summer Celebration Special</h2>
 <p class="offer__desc">
-Get 20% off our entire seasonal collection! Use code <strong style="color: var(--pink-400);">SWEET20</strong> at checkout. Limited time offer — don't miss out on these delicious flavors.
+Get 20% off our entire seasonal collection! Use code <strong style="color: var(--pink-400);">CELEBRATE20</strong> at checkout. Limited time offer — don't miss out on these delicious flavours.
 </p>
 <div class="offer__countdown">
 <div class="offer__count-item">
@@ -923,7 +966,7 @@ TESTIMONIALS
 <div class="text-center fade-in">
 <span class="script">Love Notes</span>
 <h2>What Our Customers Say</h2>
-<p class="lead">Don't just take our word for it — hear from our happy cupcake lovers.</p>
+<p class="lead">Don't just take our word for it — hear from our happy cupcake lovers in Blantyre.</p>
 </div>
 <div class="testimonials__grid">
 <div class="testimonial-card fade-in">
@@ -935,12 +978,12 @@ TESTIMONIALS
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 </div>
-<p class="testimonial-card__text">The Birthday Bash cupcakes are absolutely divine! I ordered a dozen for my daughter's birthday and everyone was raving about them. AJs Cakery made her day special.</p>
+<p class="testimonial-card__text">The Birthday Bash cupcakes were absolutely divine! I ordered a dozen for my daughter's party and everyone was raving about them. AJ made her day special.</p>
 <div class="testimonial-card__author">
-<div class="testimonial-card__avatar">S</div>
+<div class="testimonial-card__avatar">T</div>
 <div>
-<div class="testimonial-card__name">Sarah Mitchell</div>
-<div class="testimonial-card__role">Loyal Customer</div>
+<div class="testimonial-card__name">Tiyamike Banda</div>
+<div class="testimonial-card__role">Birthday Client, Blantyre</div>
 </div>
 </div>
 </div>
@@ -957,8 +1000,8 @@ TESTIMONIALS
 <div class="testimonial-card__author">
 <div class="testimonial-card__avatar">J</div>
 <div>
-<div class="testimonial-card__name">James Rodriguez</div>
-<div class="testimonial-card__role">Food Blogger</div>
+<div class="testimonial-card__name">Jeanette Mwale</div>
+<div class="testimonial-card__role">Food Enthusiast, Blantyre</div>
 </div>
 </div>
 </div>
@@ -975,8 +1018,8 @@ TESTIMONIALS
 <div class="testimonial-card__author">
 <div class="testimonial-card__avatar">E</div>
 <div>
-<div class="testimonial-card__name">Emily Chen</div>
-<div class="testimonial-card__role">Wedding Client</div>
+<div class="testimonial-card__name">Esther & Moses</div>
+<div class="testimonial-card__role">Wedding Clients, Blantyre</div>
 </div>
 </div>
 </div>
@@ -991,8 +1034,8 @@ NEWSLETTER
 <div class="container">
 <div class="newsletter__inner fade-in">
 <span class="script">Stay Sweet</span>
-<h2>Join Our Sweet Community</h2>
-<p class="lead">Subscribe to get exclusive offers, new flavor announcements, and baking tips delivered to your inbox.</p>
+<h2>Get First Access to New Flavours</h2>
+<p class="lead">Subscribe to get exclusive offers, seasonal announcements, and celebration tips delivered to your inbox.</p>
 <form class="newsletter__form" onsubmit="handleSubscribe(event)">
 <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
 <button type="submit" class="newsletter__btn">Subscribe</button>
@@ -1013,17 +1056,17 @@ FOOTER
 <div class="nav__logo-icon">🎂</div>
 AJs <span>Cakery</span>
 </a>
-<p class="footer__brand-desc">Handcrafted cupcakes and cakes baked fresh daily with love and the finest organic ingredients. Baked with love in Blantyre, AJs Cakery.</p>
+<p class="footer__brand-desc">Handcrafted celebration cakes and cupcakes baked fresh daily with love. Baked with love in Blantyre by AJ.</p>
 <div class="footer__social">
-<a href="#" class="footer__social-link" aria-label="Instagram">
+<a href="https://instagram.com/ajscakery.mw" class="footer__social-link" aria-label="Instagram" target="_blank">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
 </a>
-<a href="#" class="footer__social-link" aria-label="Facebook">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+<a href="https://wa.me/265992030757" class="footer__social-link" aria-label="WhatsApp" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
 </a>
-<a href="#" class="footer__social-link" aria-label="Twitter">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-</a>
+</div>
+<div style="margin-top:16px; font-size:0.85rem; color:var(--text-soft)">
+Follow our work: <a href="https://instagram.com/ajscakery.mw" style="color:var(--pink-400); font-weight:500" target="_blank">@ajscakery.mw</a>
 </div>
 </div>
 <div>
@@ -1031,41 +1074,41 @@ AJs <span>Cakery</span>
 <div class="footer__links">
 <a href="#home" class="footer__link">Home</a>
 <a href="#products" class="footer__link">Menu</a>
+<a href="#custom-order" class="footer__link">Custom Orders</a>
 <a href="#about" class="footer__link">Our Story</a>
 <a href="#testimonials" class="footer__link">Reviews</a>
-<a href="#contact" class="footer__link">Contact</a>
 </div>
 </div>
 <div>
 <h3 class="footer__heading">Categories</h3>
 <div class="footer__links">
-<a href="#" class="footer__link">Classic Cupcakes</a>
-<a href="#" class="footer__link">Premium Collection</a>
+<a href="#" class="footer__link">Birthday Cakes</a>
+<a href="#" class="footer__link">Wedding Cakes</a>
+<a href="#" class="footer__link">Corporate Orders</a>
+<a href="#" class="footer__link">Cupcake Boxes</a>
 <a href="#" class="footer__link">Seasonal Specials</a>
-<a href="#" class="footer__link">Custom Orders</a>
-<a href="#" class="footer__link">Gift Boxes</a>
 </div>
 </div>
 <div>
 <h3 class="footer__heading">Contact Us</h3>
 <div class="footer__links">
-<a href="#" class="footer__link">123 Baker Street, Blantyre</a>
-<a href="tel:+1234567890" class="footer__link">+1 (234) 567-890</a>
-<a href="mailto:hello@ajscakery.com" class="footer__link">hello@ajscakery.com</a>
+<a href="#" class="footer__link">Blantyre, Malawi</a>
+<a href="tel:+265992030757" class="footer__link">+265 992 030 757</a>
+<a href="mailto:hello@ajscakery.mw" class="footer__link">hello@ajscakery.mw</a>
 </div>
 </div>
 </div>
 <div class="footer__bottom">
-<p class="footer__copyright">© 2026 AJ's Cakery ✨ Baked with love by AJ's Mommy 🎂</p>
+<p class="footer__copyright">© 2026 AJs Cakery ✨ Baked with love by AJ 🎂</p>
 <div class="footer__links" style="flex-direction:row; gap:24px;">
-<a href="#" class="footer__link">Privacy Policy</a>
+<a href="#" class="footer__link">Privacy</a>
 <a href="#" class="footer__link">Terms</a>
 </div>
 </div>
 </div>
 </footer>
 
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
+<button class="back-to-top" id="backToTop" aria-label="Return to menu">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
@@ -1074,11 +1117,12 @@ JAVASCRIPT
 ========================================== -->
 <script>
 // ==========================================
-// CURRENCY CONFIGURATION
+// CURRENCY CONFIGURATION - MALAWI
 // ==========================================
-const CURRENCY = 'MK';
+const CURRENCY = 'MWK';
 function formatPrice(amount) {
-  return `${CURRENCY} ${amount.toFixed(2)}`;
+  // Amount is in whole Kwacha, e.g., 30000 not 30.00
+  return `${CURRENCY} ${amount.toLocaleString('en-MW')}`;
 }
 
 // CART STATE
@@ -1090,7 +1134,7 @@ const cartTotal = document.getElementById('cartTotal');
 
 function updateCartUI() {
   if (cartState.length === 0) {
-    cartBody.innerHTML = '<div class="cart-drawer__empty">Your cart is empty. Time for a treat! 🎂</div>';
+    cartBody.innerHTML = '<div class="cart-drawer__empty">Your celebration starts here — browse our collection 🎂</div>';
     cartBadge.classList.remove('visible');
   } else {
     cartBadge.classList.add('visible');
@@ -1166,8 +1210,6 @@ backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 
 // LOGO SCROLL TO TOP
 document.querySelector('.nav__logo').addEventListener('click', function(e) {
-    // If it's the default behavior (href="#home"), let it scroll smoothly via CSS scroll-behavior
-    // If JS is required to force top 0:
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
