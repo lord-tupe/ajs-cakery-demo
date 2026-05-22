@@ -5,8 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AJs Cakery | Custom Celebration Cakes in Blantyre</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
-<link rel="alternate icon" href="data:image/png;base64,iVBORw0KGgo=">
-<meta name="description" content="Custom celebration cakes in Blantyre: birthdays, weddings, corporate events. Handcrafted by AJ. Order via WhatsApp: +265 992 030 757">
+<meta name="description" content="Handcrafted cakes for birthdays, weddings & more. Order via WhatsApp. Based in Blantyre, Malawi.">
+
+<!-- Open Graph / Social -->
+<meta property="og:title" content="AJs Cakery – Custom Celebration Cakes in Blantyre">
+<meta property="og:description" content="Handcrafted cakes for birthdays, weddings & more.">
+<meta property="og:image" content="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AJs Cakery",
+  "description": "Custom celebration cakes in Blantyre, Malawi",
+  "telephone": "+265992030757",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Blantyre",
+    "addressCountry": "MW"
+  },
+  "image": "https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png",
+  "url": "https://ajscakery.mw"
+}
+</script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,39 +43,28 @@ CSS RESET & VARIABLES
 ============================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-/* Color System */
 --pink-50: #FFF0F5; --pink-100: #FFE0EC; --pink-200: #FFB8D2;
 --pink-400: #FF6B9D; --pink-600: #E0457A; --pink-900: #6B1535;
 --cream: #FFF8F0; --peach: #FFD6B8; --gold: #F5C842; --rose: #FF8FAB;
---white: #FFFFFF; --text: #2D1B2E; --text-mid: #7D5C6A; --text-soft: #B899A6;
-
-/* Typography */
+--white: #FFFFFF; --text: #2D1B2E; --text-mid: #6B4F5A; --text-soft: #B899A6;
 --font-display: 'Playfair Display', Georgia, serif;
 --font-body: 'Poppins', sans-serif;
 --font-script: 'Dancing Script', cursive;
-
-/* Spacing */
 --section-gap: 120px; --section-gap-sm: 80px;
 --gap-xs: 8px; --gap-sm: 16px; --gap-md: 32px; --gap-lg: 64px; --gap-xl: 96px;
-
-/* UI Elements */
 --radius-sm: 12px; --radius-md: 20px; --radius-lg: 32px; --radius-xl: 48px; --radius-full: 9999px;
 --shadow-sm: 0 2px 8px rgba(255, 107, 157, 0.08);
 --shadow-md: 0 8px 24px rgba(255, 107, 157, 0.14);
 --shadow-lg: 0 16px 48px rgba(255, 107, 157, 0.20);
-
 --nav-height: 80px;
 --ease: cubic-bezier(0.16, 1, 0.3, 1);
 --fast: 200ms var(--ease); --base: 400ms var(--ease);
-
-/* Modal Variables */
 --modal-bg: rgba(45, 27, 46, 0.7);
 --modal-card-bg: var(--white);
 --modal-radius: 24px;
 --modal-shadow: 0 20px 50px rgba(45, 27, 46, 0.3);
 --modal-transition: 0.3s ease;
 }
-
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
 font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--text);
@@ -63,16 +76,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ul, ol { list-style: none; }
 input, textarea, select { font-family: inherit; font-size: inherit; width: 100%; }
 
-/* ============================================
-UTILITY CLASSES
-============================================ */
+/* Skip to content */
+.skip-link {
+position: absolute; top: -100px; left: 16px; background: var(--pink-400); color: white;
+padding: 8px 16px; border-radius: var(--radius-sm); z-index: 10000;
+transition: top 0.2s;
+}
+.skip-link:focus { top: 16px; }
+
+/* Utility */
 .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 .section { padding: var(--section-gap) 0; }
 .text-center { text-align: center; }
-.mx-auto { margin-left: auto; margin-right: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
-/* Typography */
 h1, h2, h3, h4 { font-family: var(--font-display); color: var(--text); line-height: 1.15; }
 h1 { font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 700; }
 h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--gap-xs); }
@@ -80,36 +96,40 @@ h3 { font-size: 1.5rem; font-weight: 600; }
 .script { font-family: var(--font-script); color: var(--pink-400); font-size: 1.4rem; display: inline-block; margin-bottom: var(--gap-xs); }
 .lead { font-size: 1.125rem; color: var(--text-mid); max-width: 580px; margin: 0 auto var(--gap-md); line-height: 1.7; }
 
-/* ============================================
-BUTTONS
-============================================ */
+/* Buttons */
 .btn {
 display: inline-flex; align-items: center; justify-content: center; gap: var(--gap-xs);
 padding: 14px 32px; font-weight: 600; border-radius: var(--radius-full);
-transition: all var(--fast); white-space: nowrap;
+transition: all var(--fast); white-space: nowrap; position: relative; overflow: hidden;
 }
 .btn-primary { background: var(--pink-400); color: var(--white); box-shadow: 0 8px 24px rgba(255,107,157,0.3); }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255,107,157,0.4); background: var(--pink-600); }
 .btn-outline { background: transparent; border: 2px solid var(--pink-400); color: var(--pink-400); }
 .btn-outline:hover { background: var(--pink-400); color: var(--white); }
-.btn-ghost { background: transparent; color: var(--text-mid); }
-.btn-ghost:hover { color: var(--pink-400); }
+.btn-whatsapp { background: #25D366; color: white; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3); }
+.btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4); }
 .btn-sm { padding: 10px 24px; font-size: 0.875rem; }
 .btn-lg { padding: 16px 40px; font-size: 1rem; }
 .btn-full { width: 100%; }
 .btn svg { width: 18px; height: 18px; transition: transform var(--fast); }
 .btn:hover svg { transform: translateX(4px); }
-
-/* WhatsApp Button */
-.btn-whatsapp {
-background: #25D366; color: white; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-}
-.btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4); }
 .btn-whatsapp svg { width: 18px; height: 18px; }
 
-/* ============================================
-NAVIGATION
-============================================ */
+/* Ripple effect */
+.ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.4); transform: scale(0); animation: ripple-anim 0.6s linear; pointer-events: none; }
+@keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
+
+/* Floating WhatsApp (mobile) */
+.floating-whatsapp {
+position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px;
+background: #25D366; color: white; border-radius: 50%; display: none;
+align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+z-index: 999; font-size: 24px; transition: transform 0.3s;
+}
+.floating-whatsapp:hover { transform: scale(1.1); }
+@media (max-width: 768px) { .floating-whatsapp { display: flex; } }
+
+/* Navigation */
 .nav {
 position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000;
 transition: all var(--base);
@@ -117,83 +137,31 @@ background: rgba(255, 248, 240, 0.75); backdrop-filter: blur(16px);
 }
 .nav.scrolled { background: rgba(255, 253, 251, 0.95); box-shadow: var(--shadow-sm); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
-.nav__logo { 
-    font-family: var(--font-script); font-size: 1.8rem; color: var(--text); 
-    display: flex; align-items: center; gap: 12px; cursor: pointer; 
-}
-.nav__logo-icon {
-width: 42px; height: 42px; background: linear-gradient(135deg, var(--pink-100), var(--peach));
-border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;
-}
+.nav__logo { font-family: var(--font-script); font-size: 1.8rem; color: var(--text); display: flex; align-items: center; gap: 12px; }
+.nav__logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--pink-100), var(--peach)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
 .nav__logo span { color: var(--pink-400); }
 .nav__links { display: flex; gap: 24px; }
 .nav__link { font-size: 0.95rem; font-weight: 500; color: var(--text-mid); padding: 8px 12px; border-radius: var(--radius-full); transition: all var(--fast); }
 .nav__link:hover, .nav__link.active { color: var(--text); background: var(--pink-100); }
 .nav__actions { display: flex; align-items: center; gap: 12px; }
-
-/* Desktop WhatsApp button in nav */
-.nav__whatsapp {
-display: inline-flex; align-items: center; gap: 6px;
-padding: 10px 20px; font-weight: 600; border-radius: var(--radius-full);
-background: #25D366; color: white; font-size: 0.9rem;
-box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
-transition: all var(--fast);
-}
+.nav__whatsapp { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; font-weight: 600; border-radius: var(--radius-full); background: #25D366; color: white; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); transition: all var(--fast); }
 .nav__whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
 .nav__whatsapp svg { width: 16px; height: 16px; }
-
-.nav__cart {
-position: relative; width: 44px; height: 44px; background: var(--pink-100); border-radius: 50%;
-display: flex; align-items: center; justify-content: center; transition: all var(--fast);
-}
+.nav__cart { position: relative; width: 44px; height: 44px; background: var(--pink-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all var(--fast); }
 .nav__cart:hover { background: var(--pink-200); }
 .nav__cart svg { width: 20px; height: 20px; color: var(--text); }
-.nav__badge {
-position: absolute; top: 0; right: 0; width: 20px; height: 20px; background: var(--pink-400);
-color: var(--white); font-size: 11px; font-weight: 700; border-radius: 50%;
-display: flex; align-items: center; justify-content: center; border: 2px solid var(--white);
-transform: scale(0); transition: transform var(--fast);
-}
+.nav__badge { position: absolute; top: 0; right: 0; width: 20px; height: 20px; background: var(--pink-400); color: var(--white); font-size: 11px; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--white); transform: scale(0); transition: transform var(--fast); }
 .nav__badge.visible { transform: scale(1); }
-.nav__hamburger { display: none; flex-direction: column; gap: 5px; width: 24px; z-index: 1001; padding: 8px; }
+.nav__hamburger { display: none; flex-direction: column; gap: 5px; width: 24px; z-index: 10001; padding: 8px; cursor: pointer; }
 .nav__hamburger span { display: block; width: 100%; height: 2px; background: var(--text); border-radius: 2px; transition: all var(--fast); }
 .nav__hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .nav__hamburger.active span:nth-child(2) { opacity: 0; }
 .nav__hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Mobile Menu */
-.mobile-menu {
-position: fixed; top: var(--nav-height); left: 0; right: 0;
-background: var(--white); z-index: 999;
-display: flex; flex-direction: column; align-items: stretch;
-padding: 24px 32px 40px;
-box-shadow: var(--shadow-md);
-opacity: 0; visibility: hidden; transform: translateY(-20px);
-transition: all var(--base);
-max-height: calc(100vh - var(--nav-height)); overflow-y: auto;
-}
-.mobile-menu.active { opacity: 1; visibility: visible; transform: translateY(0); }
-.mobile-menu .nav__link {
-font-size: 1.25rem; font-family: var(--font-display); color: var(--text);
-padding: 16px 0; border-bottom: 1px solid var(--pink-100);
-}
-.mobile-menu .nav__link:last-of-type { border-bottom: none; }
-.mobile-menu .btn-whatsapp {
-margin-top: 16px; padding: 14px; font-size: 1rem; justify-content: center;
-}
-
 /* Cart Drawer */
-.cart-overlay {
-position: fixed; inset: 0; background: rgba(45, 27, 46, 0.35); z-index: 2000;
-opacity: 0; visibility: hidden; transition: all var(--base);
-}
+.cart-overlay { position: fixed; inset: 0; background: rgba(45, 27, 46, 0.35); z-index: 2000; opacity: 0; visibility: hidden; transition: all var(--base); }
 .cart-overlay.active { opacity: 1; visibility: visible; }
-.cart-drawer {
-position: absolute; top: 0; right: 0; bottom: 0; width: 100%; max-width: 400px;
-background: var(--white); border-left: 1px solid var(--pink-100);
-transform: translateX(100%); transition: transform var(--base);
-display: flex; flex-direction: column;
-}
+.cart-drawer { position: absolute; top: 0; right: 0; bottom: 0; width: 100%; max-width: 400px; background: var(--white); border-left: 1px solid var(--pink-100); transform: translateX(100%); transition: transform var(--base); display: flex; flex-direction: column; }
 .cart-overlay.active .cart-drawer { transform: translateX(0); }
 .cart-drawer__header { padding: 24px; border-bottom: 1px solid var(--pink-100); display: flex; justify-content: space-between; align-items: center; }
 .cart-drawer__title { font-family: var(--font-display); font-size: 1.5rem; }
@@ -209,32 +177,41 @@ display: flex; flex-direction: column;
 .cart-drawer__footer { padding: 24px; border-top: 1px solid var(--pink-100); background: var(--pink-50); }
 .cart-drawer__total { display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; color: var(--text); }
 
-/* ============================================
-HERO SECTION
-============================================ */
-.hero {
-min-height: 100vh; display: flex; align-items: center; padding-top: var(--nav-height);
-position: relative; overflow: hidden;
-background: linear-gradient(170deg, var(--white) 0%, var(--cream) 50%, var(--pink-50) 100%);
+/* Fullscreen Menu Overlay */
+.menu-overlay { position: fixed; inset: 0; display: flex; transform: translateY(-100%); background: var(--white); z-index: 9999; }
+.menu-left, .menu-right { flex: 1; display: flex; align-items: center; justify-content: center; opacity: 0; }
+.menu-left { background: var(--cream); transform: translateX(-40px); }
+.menu-right { background: var(--pink-50); transform: translateX(40px); overflow: hidden; position: relative; }
+.menu-left nav { display: flex; flex-direction: column; gap: 32px; text-align: left; padding: 0 40px; }
+.menu-left nav a { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--text); position: relative; text-decoration: none; display: inline-block; transition: transform 0.3s, color 0.3s; }
+.menu-left nav a:hover { transform: translateX(10px); color: var(--pink-400); }
+.menu-left nav a::after { content: ""; position: absolute; left: 0; bottom: -8px; width: 0%; height: 3px; background: var(--pink-400); transition: width 0.3s var(--ease); }
+.menu-left nav a:hover::after { width: 100%; }
+.menu-right .menu-image { width: 80%; height: 70%; background: url('https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png') center/cover no-repeat; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); transform: scale(0.9); }
+.menu-right .menu-brand { position: absolute; bottom: 40px; left: 40px; color: var(--text); font-family: var(--font-display); font-size: 1.8rem; opacity: 0; transform: translateY(20px); }
+.menu-close-btn { position: absolute; top: 24px; right: 32px; z-index: 10002; width: 40px; height: 40px; border-radius: 50%; background: var(--pink-100); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--text); transition: background 0.3s; }
+.menu-close-btn:hover { background: var(--pink-200); }
+@media (max-width: 768px) {
+.menu-overlay { flex-direction: column; }
+.menu-left, .menu-right { flex: none; width: 100%; min-height: 50vh; }
+.menu-left { order: 1; }
+.menu-right { order: 0; }
+.menu-right .menu-image { height: 60%; }
 }
-.hero::before {
-content: ''; position: absolute; top: -20%; right: -10%; width: 50%; height: 120%;
-background: radial-gradient(ellipse, rgba(255,107,157,0.15) 0%, transparent 70%); pointer-events: none;
-}
+
+/* Cursor */
+.cursor { width: 20px; height: 20px; border: 2px solid var(--pink-400); border-radius: 50%; position: fixed; pointer-events: none; z-index: 99999; mix-blend-mode: difference; transition: transform 0.1s; }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; align-items: center; padding-top: var(--nav-height); position: relative; overflow: hidden; background: linear-gradient(170deg, var(--white) 0%, var(--cream) 50%, var(--pink-50) 100%); }
+.hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 50%; height: 120%; background: radial-gradient(ellipse, rgba(255,107,157,0.15) 0%, transparent 70%); pointer-events: none; }
 .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 80px 0; }
 .hero__content { position: relative; z-index: 2; }
-.hero__badge {
-display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px;
-background: var(--white); border: 1px solid var(--pink-100); border-radius: var(--radius-full);
-font-size: 0.85rem; font-weight: 500; color: var(--text); margin-bottom: 24px; box-shadow: var(--shadow-sm);
-}
+.hero__badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: var(--white); border: 1px solid var(--pink-100); border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 500; color: var(--text); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
 .hero__badge-dot { width: 8px; height: 8px; background: #4CAF50; border-radius: 50%; animation: pulse 2s infinite; }
 .hero__title { margin-bottom: 20px; }
 .hero__title i { font-style: italic; color: var(--pink-400); position: relative; }
-.hero__title i::after {
-content: ''; position: absolute; bottom: 4px; left: 0; right: 0; height: 8px;
-background: rgba(255,107,157,0.2); border-radius: 4px;
-}
+.hero__title i::after { content: ''; position: absolute; bottom: 4px; left: 0; right: 0; height: 8px; background: rgba(255,107,157,0.2); border-radius: 4px; }
 .hero__desc { font-size: 1.125rem; color: var(--text-mid); margin-bottom: 32px; max-width: 480px; line-height: 1.8; }
 .hero__actions { display: flex; gap: 16px; margin-bottom: 48px; flex-wrap: wrap; }
 .hero__stats { display: flex; gap: 48px; padding-top: 24px; border-top: 1px solid var(--pink-100); }
@@ -242,68 +219,34 @@ background: rgba(255,107,157,0.2); border-radius: 4px;
 .hero__stat-label { font-size: 0.8rem; color: var(--text-soft); margin-top: 4px; }
 .hero__image-wrapper { position: relative; display: flex; align-items: center; justify-content: center; }
 .hero__image-container { position: relative; width: 100%; max-width: 480px; }
-.hero__image {
-width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
-animation: float 6s ease-in-out infinite;
-}
-.hero__floating {
-position: absolute; background: var(--white); border-radius: var(--radius-md); padding: 12px 16px;
-box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px;
-animation: float 5s ease-in-out infinite;
-}
+.hero__image { width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); animation: float 6s ease-in-out infinite; }
+.hero__floating { position: absolute; background: var(--white); border-radius: var(--radius-md); padding: 12px 16px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px; animation: float 5s ease-in-out infinite; }
 .hero__floating--1 { top: 12%; left: -15%; animation-delay: -1s; }
 .hero__floating--2 { bottom: 18%; right: -10%; animation-delay: -3s; }
 .hero__floating-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--pink-100); display: flex; align-items: center; justify-content: center; font-size: 18px; }
 .hero__floating-text { font-size: 0.85rem; font-weight: 600; color: var(--text); }
 .hero__floating-sub { font-size: 0.7rem; color: var(--text-soft); }
+.price-banner { background: var(--pink-100); border-left: 4px solid var(--pink-400); padding: 16px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 24px 0; font-size: 0.9rem; color: var(--text); }
 
-/* Price Banner */
-.price-banner {
-background: var(--pink-100); border-left: 4px solid var(--pink-400);
-padding: 16px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-margin: 24px 0; font-size: 0.9rem; color: var(--text);
-}
-
-/* ============================================
-MARQUEE / TRUST STRIP
-============================================ */
-.marquee {
-padding: 16px 0; border-top: 1px solid var(--pink-100); border-bottom: 1px solid var(--pink-100);
-overflow: hidden; background: var(--white);
-}
+/* Marquee */
+.marquee { padding: 16px 0; border-top: 1px solid var(--pink-100); border-bottom: 1px solid var(--pink-100); overflow: hidden; background: var(--white); }
 .marquee__track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
-.marquee__item {
-padding: 0 48px; font-size: 0.9rem; font-weight: 500; color: var(--text-mid); white-space: nowrap;
-display: flex; align-items: center; gap: 8px;
-}
+.marquee__item { padding: 0 48px; font-size: 0.9rem; font-weight: 500; color: var(--text-mid); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
 .marquee__item svg { width: 18px; height: 18px; color: var(--pink-400); }
 
-/* ============================================
-PRODUCTS SECTION
-============================================ */
+/* Products */
 .products { background: var(--pink-50); }
 .products__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
 .products__filters { display: flex; gap: 8px; flex-wrap: wrap; }
-.filter-btn {
-padding: 8px 18px; font-size: 0.85rem; font-weight: 500; border-radius: var(--radius-full);
-border: 1px solid var(--pink-200); background: var(--white); color: var(--text-mid);
-transition: all var(--fast);
-}
+.filter-btn { padding: 8px 18px; font-size: 0.85rem; font-weight: 500; border-radius: var(--radius-full); border: 1px solid var(--pink-200); background: var(--white); color: var(--text-mid); transition: all var(--fast); }
 .filter-btn:hover, .filter-btn.active { background: var(--pink-400); color: var(--white); border-color: var(--pink-400); }
 .products__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; }
-.product-card {
-background: var(--white); border-radius: var(--radius-md); overflow: hidden;
-border: 1px solid var(--pink-100); transition: all var(--base); position: relative;
-}
+.product-card { background: var(--white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--pink-100); transition: all var(--base); position: relative; }
 .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
 .product-card__img-wrapper { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--pink-50); }
 .product-card__img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--base); }
 .product-card:hover .product-card__img { transform: scale(1.08); }
-.product-card__badge {
-position: absolute; top: 16px; left: 16px; padding: 6px 14px; background: var(--pink-400);
-color: var(--white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-border-radius: var(--radius-full); letter-spacing: 0.05em;
-}
+.product-card__badge { position: absolute; top: 16px; left: 16px; padding: 6px 14px; background: var(--pink-400); color: var(--white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: var(--radius-full); }
 .product-card__content { padding: 20px; }
 .product-card__cat { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--text-soft); letter-spacing: 0.1em; margin-bottom: 4px; }
 .product-card__name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; margin-bottom: 6px; }
@@ -312,49 +255,27 @@ border-radius: var(--radius-full); letter-spacing: 0.05em;
 .product-card__rating svg { width: 14px; height: 14px; color: var(--gold); fill: var(--gold); }
 .product-card__price { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; }
 .product-card__price-note { font-size: 0.8rem; color: var(--text-soft); font-weight: 400; }
-.product-card__add {
-width: 100%; margin-top: 16px; padding: 12px; background: var(--pink-50); border: 1px solid var(--pink-100);
-border-radius: var(--radius-sm); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;
-transition: all var(--fast);
-}
+.product-card__add { width: 100%; margin-top: 16px; padding: 12px; background: var(--pink-50); border: 1px solid var(--pink-100); border-radius: var(--radius-sm); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all var(--fast); }
 .product-card__add:hover { background: var(--pink-400); color: var(--white); border-color: var(--pink-400); }
 .product-card__add svg { width: 16px; height: 16px; }
 
-/* ============================================
-CUSTOM ORDER WORKFLOW SECTION
-============================================ */
+/* Custom Order */
 .custom-order { background: var(--cream); }
 .custom-order__steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 32px; margin-top: 48px; }
 .custom-order__step { text-align: center; }
-.custom-order__icon {
-width: 64px; height: 64px; background: var(--pink-100); border-radius: 50%;
-display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px;
-}
+.custom-order__icon { width: 64px; height: 64px; background: var(--pink-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px; }
 .custom-order__step h3 { margin-bottom: 8px; }
 .custom-order__step p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.6; }
 
-/* ============================================
-ABOUT / STORY SECTION
-============================================ */
+/* About */
 .about { background: var(--cream); }
 .about__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .about__images { position: relative; height: 550px; }
-.about__img-main {
-position: absolute; top: 0; left: 0; width: 75%; height: 80%; border-radius: var(--radius-xl);
-overflow: hidden; box-shadow: var(--shadow-lg);
-}
+.about__img-main { position: absolute; top: 0; left: 0; width: 75%; height: 80%; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
 .about__img-main img { width: 100%; height: 100%; object-fit: cover; }
-.about__img-sec {
-position: absolute; bottom: 0; right: 0; width: 55%; height: 55%; border-radius: var(--radius-xl);
-overflow: hidden; border: 6px solid var(--white); box-shadow: var(--shadow-md);
-}
+.about__img-sec { position: absolute; bottom: 0; right: 0; width: 55%; height: 55%; border-radius: var(--radius-xl); overflow: hidden; border: 6px solid var(--white); box-shadow: var(--shadow-md); }
 .about__img-sec img { width: 100%; height: 100%; object-fit: cover; }
-.about__experience {
-position: absolute; top: 50%; right: 15%; transform: translateY(-50%);
-width: 110px; height: 110px; background: linear-gradient(135deg, var(--pink-400), var(--pink-600));
-border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;
-color: var(--white); box-shadow: 0 12px 32px rgba(255,107,157,0.35); z-index: 5;
-}
+.about__experience { position: absolute; top: 50%; right: 15%; transform: translateY(-50%); width: 110px; height: 110px; background: linear-gradient(135deg, var(--pink-400), var(--pink-600)); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); box-shadow: 0 12px 32px rgba(255,107,157,0.35); z-index: 5; }
 .about__exp-number { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; line-height: 1; }
 .about__exp-text { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
 .about__content { padding: 32px 0; }
@@ -365,947 +286,908 @@ color: var(--white); box-shadow: 0 12px 32px rgba(255,107,157,0.35); z-index: 5;
 .about__feat-title { font-family: var(--font-display); font-weight: 600; margin-bottom: 4px; }
 .about__feat-desc { font-size: 0.85rem; color: var(--text-soft); line-height: 1.4; }
 
-/* ============================================
-OFFER BANNER
-============================================ */
+/* Offer & Countdown */
 .offer { padding: var(--section-gap) 0; }
-.offer__card {
-background: linear-gradient(135deg, var(--pink-100) 0%, var(--peach) 50%, #F8E8FF 100%);
-border-radius: var(--radius-lg); padding: 64px; display: grid; grid-template-columns: 1fr 1fr;
-gap: 48px; align-items: center; position: relative; overflow: hidden;
-}
-.offer__card::before {
-content: ''; position: absolute; top: -50%; right: -15%; width: 50%; height: 200%;
-background: radial-gradient(ellipse, rgba(255,107,157,0.15), transparent); pointer-events: none;
-}
+.offer__card { background: linear-gradient(135deg, var(--pink-100) 0%, var(--peach) 50%, #F8E8FF 100%); border-radius: var(--radius-lg); padding: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; overflow: hidden; }
+.offer__card::before { content: ''; position: absolute; top: -50%; right: -15%; width: 50%; height: 200%; background: radial-gradient(ellipse, rgba(255,107,157,0.15), transparent); pointer-events: none; }
 .offer__content { position: relative; z-index: 2; }
 .offer__discount { font-family: var(--font-script); font-size: 3.5rem; color: var(--pink-400); margin-bottom: 8px; }
 .offer__title { font-size: 2.5rem; margin-bottom: 16px; }
 .offer__desc { font-size: 1rem; color: var(--text-mid); margin-bottom: 32px; line-height: 1.7; }
 .offer__countdown { display: flex; gap: 16px; margin-bottom: 32px; }
-.offer__count-item {
-text-align: center; background: var(--white); border-radius: var(--radius-md); padding: 16px 20px;
-min-width: 80px; box-shadow: var(--shadow-sm);
-}
-.offer__count-number { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; line-height: 1; }
+.offer__count-item { text-align: center; background: var(--white); border-radius: var(--radius-md); padding: 16px 20px; min-width: 80px; box-shadow: var(--shadow-sm); }
+.offer__count-number { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; line-height: 1; animation: flip-digit 0.6s ease; }
+@keyframes flip-digit { 0% { transform: rotateX(90deg); opacity: 0; } 100% { transform: rotateX(0); opacity: 1; } }
 .offer__count-label { font-size: 0.7rem; color: var(--text-soft); text-transform: uppercase; margin-top: 4px; letter-spacing: 0.05em; }
 .offer__image { position: relative; z-index: 2; text-align: center; }
 .offer__image img { max-width: 350px; margin: 0 auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
 
-/* ============================================
-TESTIMONIALS
-============================================ */
+/* Instagram Feed */
+.instagram-feed { background: var(--white); padding: var(--section-gap) 0; }
+.insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+.insta-item { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 1; }
+.insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.insta-item:hover img { transform: scale(1.05); }
+.insta-item a { position: absolute; inset: 0; }
+
+/* Testimonials */
 .testimonials { background: var(--pink-50); }
 .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
-.testimonial-card {
-background: var(--white); border: 1px solid var(--pink-100); border-radius: var(--radius-md);
-padding: 32px; transition: all var(--base); position: relative;
-}
+.testimonial-card { background: var(--white); border: 1px solid var(--pink-100); border-radius: var(--radius-md); padding: 32px; transition: all var(--base); position: relative; }
 .testimonial-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: transparent; }
 .testimonial-card__quote { font-size: 36px; color: var(--pink-200); font-family: var(--font-display); line-height: 1; margin-bottom: 12px; }
 .testimonial-card__text { font-size: 1rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 24px; font-style: italic; }
 .testimonial-card__stars { display: flex; gap: 4px; margin-bottom: 16px; }
 .testimonial-card__stars svg { width: 16px; height: 16px; color: var(--gold); fill: var(--gold); }
 .testimonial-card__author { display: flex; align-items: center; gap: 12px; }
-.testimonial-card__avatar {
-width: 44px; height: 44px; border-radius: 50%; background: var(--pink-100);
-display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--pink-400);
-}
+.testimonial-card__avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-100); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--pink-400); }
 .testimonial-card__name { font-weight: 600; font-size: 0.85rem; }
 .testimonial-card__role { font-size: 0.75rem; color: var(--text-soft); }
 
-/* ============================================
-NEWSLETTER
-============================================ */
-.newsletter {
-background: linear-gradient(135deg, var(--pink-900) 0%, #4A2D3F 100%); color: var(--white);
-text-align: center; padding: 80px 0; position: relative; overflow: hidden; border-radius: var(--radius-lg);
-margin: 0 32px var(--section-gap);
-}
-.newsletter::before {
-content: ''; position: absolute; top: -50%; left: -20%; width: 60%; height: 200%;
-background: radial-gradient(ellipse, rgba(255,107,157,0.1), transparent); pointer-events: none;
-}
-.newsletter__inner { position: relative; z-index: 2; }
+/* Newsletter */
+.newsletter { background: linear-gradient(135deg, var(--pink-900) 0%, #4A2D3F 100%); color: var(--white); text-align: center; padding: 80px 0; border-radius: var(--radius-lg); margin: 0 32px var(--section-gap); }
 .newsletter h2 { color: var(--white); }
 .newsletter .lead { color: rgba(255,255,255,0.65); }
 .newsletter .script { color: var(--pink-200); }
 .newsletter__form { display: flex; gap: 12px; max-width: 480px; margin: 32px auto 0; }
-.newsletter__input {
-flex: 1; padding: 14px 24px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08);
-color: var(--white); border-radius: var(--radius-full); outline: none; transition: all var(--fast);
-}
-.newsletter__input::placeholder { color: rgba(255,255,255,0.4); }
-.newsletter__input:focus { border-color: var(--pink-400); background: rgba(255,255,255,0.12); }
-.newsletter__btn {
-padding: 14px 28px; background: var(--pink-400); color: var(--white); border-radius: var(--radius-full);
-font-weight: 600; transition: all var(--fast);
-}
-.newsletter__btn:hover { background: var(--pink-600); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,157,0.3); }
+.newsletter__input { flex: 1; padding: 14px 24px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: var(--white); border-radius: var(--radius-full); }
+.newsletter__input:focus { border-color: var(--pink-400); }
+.newsletter__btn { padding: 14px 28px; background: var(--pink-400); color: var(--white); border-radius: var(--radius-full); font-weight: 600; }
+.newsletter__btn:hover { background: var(--pink-600); }
 .newsletter__privacy { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 12px; }
 
-/* ============================================
-FOOTER
-============================================ */
+/* Footer */
 .footer { background: var(--white); border-top: 1px solid var(--pink-100); padding: 80px 0 40px; }
 .footer__top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px; }
 .footer__brand-desc { font-size: 0.9rem; color: var(--text-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 24px; max-width: 300px; }
 .footer__social { display: flex; gap: 12px; }
-.footer__social-link {
-width: 40px; height: 40px; background: var(--pink-50); border-radius: 50%;
-display: flex; align-items: center; justify-content: center; transition: all var(--fast);
-}
+.footer__social-link { width: 40px; height: 40px; background: var(--pink-50); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all var(--fast); }
 .footer__social-link:hover { background: var(--pink-400); color: var(--white); }
-.footer__social-link svg { width: 16px; height: 16px; }
 .footer__heading { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 20px; }
 .footer__links { display: flex; flex-direction: column; gap: 10px; }
 .footer__link { font-size: 0.9rem; color: var(--text-soft); }
 .footer__link:hover { color: var(--pink-400); }
-.footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--pink-100); flex-wrap: wrap; gap: 16px; }
-.footer__copyright { font-size: 0.8rem; color: var(--text-soft); }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--pink-100); flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: var(--text-soft); }
 
-/* Back to Top */
-.back-to-top {
-position: fixed; bottom: 32px; right: 32px; width: 48px; height: 48px; background: var(--pink-400);
-color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center;
-box-shadow: 0 8px 24px rgba(255,107,157,0.3); z-index: 999;
-opacity: 0; visibility: hidden; transform: translateY(10px); transition: all var(--fast);
-}
-.back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255,107,157,0.4); }
-.back-to-top svg { width: 20px; height: 20px; }
+/* Back to top */
+.back-to-top { position: fixed; bottom: 32px; right: 32px; width: 48px; height: 48px; background: var(--pink-400); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255,107,157,0.3); z-index: 999; opacity: 0; visibility: hidden; transition: all var(--fast); }
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { transform: translateY(-3px); }
 
-/* ============================================
-MODAL SYSTEM
-============================================ */
-.modal-overlay {
-position: fixed; inset: 0; background: var(--modal-bg);
-display: flex; align-items: center; justify-content: center;
-opacity: 0; visibility: hidden; pointer-events: none;
-transition: opacity var(--modal-transition), visibility var(--modal-transition);
-z-index: 3000; padding: 1rem;
-}
-.modal-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
-
-.modal-card {
-background: var(--modal-card-bg); border-radius: var(--modal-radius);
-max-width: 550px; width: 100%; padding: 2rem;
-box-shadow: var(--modal-shadow); position: relative;
-max-height: 90vh; overflow-y: auto;
-transform: translateY(16px); opacity: 0;
-transition: transform 0.35s ease, opacity 0.35s ease;
-}
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: var(--modal-bg); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; z-index: 3000; padding: 1rem; transition: opacity 0.3s, visibility 0.3s; }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-card { background: var(--modal-card-bg); border-radius: var(--modal-radius); max-width: 550px; width: 100%; padding: 2rem; box-shadow: var(--modal-shadow); position: relative; max-height: 90vh; overflow-y: auto; transform: translateY(16px); opacity: 0; transition: transform 0.35s, opacity 0.35s; }
 .modal-overlay.active .modal-card { transform: translateY(0); opacity: 1; }
-
-.modal-close {
-position: absolute; top: 1rem; right: 1rem;
-background: var(--pink-100); border: none; border-radius: 50%;
-width: 32px; height: 32px; font-size: 1.25rem; cursor: pointer;
-display: flex; align-items: center; justify-content: center;
-color: var(--text); transition: background var(--fast);
-}
+.modal-close { position: absolute; top: 1rem; right: 1rem; background: var(--pink-100); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: var(--text); transition: background var(--fast); }
 .modal-close:hover { background: var(--pink-200); }
-
-.modal-form-content h2 { margin-bottom: 8px; }
-.modal-desc { color: var(--text-mid); margin-bottom: 24px; font-size: 0.95rem; }
-
 .form-group { margin-bottom: 20px; }
-.form-group label {
-display: block; font-weight: 600; margin-bottom: 8px; color: var(--text);
-font-size: 0.9rem;
-}
-.form-group input, .form-group select, .form-group textarea {
-padding: 12px 16px; border: 1px solid var(--pink-200); border-radius: var(--radius-sm);
-background: var(--pink-50); transition: border-color var(--fast);
-}
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-outline: none; border-color: var(--pink-400); background: var(--white);
-}
+.form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text); font-size: 0.9rem; }
+.form-group input, .form-group select, .form-group textarea { padding: 12px 16px; border: 1px solid var(--pink-200); border-radius: var(--radius-sm); background: var(--pink-50); transition: border-color var(--fast); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--pink-400); background: var(--white); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 
-.modal-success { text-align: center; padding: 2rem 0; }
-.modal-success h3 { margin-bottom: 12px; }
-.modal-success p { color: var(--text-mid); margin-bottom: 24px; }
-
-/* Animations */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+/* Scroll animations */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* Responsive */
 @media (max-width: 1024px) {
-.hero__inner { grid-template-columns: 1fr; gap: 40px; }
-.hero__content { text-align: center; padding-top: 20px; }
-.hero__badge { margin: 0 auto 24px; }
-.hero__desc { margin: 0 auto 32px; }
-.hero__actions { justify-content: center; }
-.hero__stats { justify-content: center; }
-.hero__image-wrapper { order: -1; max-width: 400px; margin: 0 auto; }
-.about__inner { grid-template-columns: 1fr; gap: 48px; }
+.hero__inner { grid-template-columns: 1fr; }
+.hero__image-wrapper { max-width: 400px; margin: 0 auto; }
+.about__inner { grid-template-columns: 1fr; }
 .about__images { height: 400px; }
-.offer__card { grid-template-columns: 1fr; padding: 40px; }
 .testimonials__grid { grid-template-columns: 1fr 1fr; }
 .footer__top { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
-:root { --section-gap: 80px; }
 .nav__links, .nav__whatsapp { display: none; }
 .nav__hamburger { display: flex; }
-.nav__actions { gap: 8px; }
-.products__header { flex-direction: column; align-items: flex-start; }
-.products__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+.products__grid { grid-template-columns: 1fr 1fr; }
 .testimonials__grid { grid-template-columns: 1fr; }
-.footer__top { grid-template-columns: 1fr; }
 .newsletter { margin: 0 16px 60px; padding: 60px 24px; }
 .newsletter__form { flex-direction: column; }
 .about__features { grid-template-columns: 1fr; }
-.offer__countdown { flex-wrap: wrap; justify-content: center; }
-.hero__stats { flex-direction: column; gap: 20px; align-items: center; }
-.hero__floating { display: none; }
-}
-@media (max-width: 480px) {
-.products__grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-.container { padding: 0 20px; }
-.modal-card { padding: 1.5rem; }
 }
 </style>
 </head>
 <body>
 
+<!-- Skip to content -->
+<a href="#home" class="skip-link">Skip to main content</a>
+
+<!-- ==========================================
+FULLSCREEN MENU OVERLAY
+========================================== -->
+<div class="menu-overlay" id="menuOverlay">
+  <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
+  <div class="menu-left" id="menuLeft">
+    <nav>
+      <a href="#home" class="overlay-link">Home</a>
+      <a href="#products" class="overlay-link">Menu</a>
+      <a href="#custom-order" class="overlay-link">Custom Orders</a>
+      <a href="#about" class="overlay-link">Our Story</a>
+      <a href="#testimonials" class="overlay-link">Reviews</a>
+      <a href="#instagram-feed" class="overlay-link">Latest Bakes</a>
+      <a href="#contact" class="overlay-link">Contact</a>
+    </nav>
+  </div>
+  <div class="menu-right" id="menuRight">
+    <div class="menu-image"></div>
+    <div class="menu-brand">AJs Cakery</div>
+  </div>
+</div>
+
 <!-- ==========================================
 NAVIGATION
 ========================================== -->
 <nav class="nav" id="nav">
-<div class="container">
-<div class="nav__inner">
-<a href="#home" class="nav__logo">
-<div class="nav__logo-icon">🎂</div>
-AJs <span>Cakery</span>
-</a>
-<div class="nav__links">
-<a href="#home" class="nav__link active">Home</a>
-<a href="#products" class="nav__link">Menu</a>
-<a href="#custom-order" class="nav__link">Custom Orders</a>
-<a href="#about" class="nav__link">Our Story</a>
-<a href="#testimonials" class="nav__link">Reviews</a>
-</div>
-<div class="nav__actions">
-<button class="nav__whatsapp" data-modal-trigger="whatsapp-modal">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
-Order via WhatsApp
-</button>
-<button class="nav__cart" id="cartToggle" aria-label="Shopping cart">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-<span class="nav__badge" id="cartBadge">0</span>
-</button>
-<a href="#products" class="btn btn-primary btn-sm">Order Now</a>
-<button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
-<span></span><span></span><span></span>
-</button>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <div class="nav__logo-icon">🎂</div>
+        AJs <span>Cakery</span>
+      </a>
+      <div class="nav__links">
+        <a href="#home" class="nav__link active">Home</a>
+        <a href="#products" class="nav__link">Menu</a>
+        <a href="#custom-order" class="nav__link">Custom Orders</a>
+        <a href="#about" class="nav__link">Our Story</a>
+        <a href="#testimonials" class="nav__link">Reviews</a>
+      </div>
+      <div class="nav__actions">
+        <a href="#" class="nav__whatsapp" id="navWhatsappBtn" aria-label="Order via WhatsApp">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+          Order via WhatsApp
+        </a>
+        <button class="nav__cart" id="cartToggle" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="nav__badge" id="cartBadge">0</span>
+        </button>
+        <a href="#products" class="btn btn-primary btn-sm">Order Now</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-<a href="#home" class="nav__link" data-mobile-link>Home</a>
-<a href="#products" class="nav__link" data-mobile-link>Menu</a>
-<a href="#custom-order" class="nav__link" data-mobile-link>Custom Orders</a>
-<a href="#about" class="nav__link" data-mobile-link>Our Story</a>
-<a href="#testimonials" class="nav__link" data-mobile-link>Reviews</a>
-<button class="btn btn-whatsapp btn-full" data-modal-trigger="whatsapp-modal">
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
-Order via WhatsApp
-</button>
-</div>
-
-<!-- Cart Drawer -->
+<!-- ==========================================
+CART DRAWER
+========================================== -->
 <div class="cart-overlay" id="cartOverlay">
-<div class="cart-drawer">
-<div class="cart-drawer__header">
-<h3 class="cart-drawer__title">Your Treats 🍰</h3>
-<button class="cart-drawer__close" id="cartClose">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-</button>
-</div>
-<div class="cart-drawer__body" id="cartBody">
-<div class="cart-drawer__empty">Your celebration starts here: browse our collection 🎂</div>
-</div>
-<div class="cart-drawer__footer">
-<div class="cart-drawer__total">
-<span>Total</span>
-<span id="cartTotal">MWK 0</span>
-</div>
-<button class="btn btn-primary btn-full" data-modal-trigger="whatsapp-modal">Checkout via WhatsApp</button>
-</div>
-</div>
+  <div class="cart-drawer">
+    <div class="cart-drawer__header">
+      <h3 class="cart-drawer__title">Your Treats 🍰</h3>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer__body" id="cartBody">
+      <div class="cart-drawer__empty">Your celebration starts here 🎂</div>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__total"><span>Total</span><span id="cartTotal">MWK 0</span></div>
+      <button class="btn btn-primary btn-full" id="cartCheckoutBtn">Checkout via WhatsApp</button>
+    </div>
+  </div>
 </div>
 
 <!-- ==========================================
 HERO SECTION
 ========================================== -->
 <section class="hero" id="home">
-<div class="container">
-<div class="hero__inner">
-<div class="hero__content fade-in">
-<div class="hero__badge">
-<span class="hero__badge-dot"></span>
-Freshly baked every morning in Blantyre
-</div>
-<h1 class="hero__title">
-Cakes Made to <i>Remember</i>
-</h1>
-<p class="hero__desc">
-Custom celebration cakes for birthdays, weddings, graduations and the moments that matter. Handcrafted in Blantyre, delivered on time, exactly as you pictured.
-</p>
-<div class="price-banner">
-<strong>Quick pricing:</strong> Cupcake boxes from MWK 30,000, Custom cakes from MWK 85,000, Corporate orders quoted individually
-</div>
-<div class="hero__actions">
-<a href="#products" class="btn btn-primary btn-lg">
-Plan Your Celebration
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-</a>
-<button class="btn btn-whatsapp btn-lg" data-modal-trigger="whatsapp-modal">
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
-Chat to Order
-</button>
-</div>
-<div class="hero__stats">
-<div class="hero__stat">
-<div class="hero__stat-number">50+</div>
-<div class="hero__stat-label">Unique Flavours</div>
-</div>
-<div class="hero__stat">
-<div class="hero__stat-number">10K+</div>
-<div class="hero__stat-label">Happy Customers</div>
-</div>
-<div class="hero__stat">
-<div class="hero__stat-number">4.9</div>
-<div class="hero__stat-label">Average Rating</div>
-</div>
-</div>
-</div>
-<div class="hero__image-wrapper fade-in">
-<div class="hero__image-container">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="AJs Cakery Strawberry Dream Cupcake" class="hero__image" loading="eager">
-<div class="hero__floating hero__floating--1">
-<div class="hero__floating-icon">⭐</div>
-<div>
-<div class="hero__floating-text">Top Rated</div>
-<div class="hero__floating-sub">4.9/5 rating</div>
-</div>
-</div>
-<div class="hero__floating hero__floating--2">
-<div class="hero__floating-icon">🎁</div>
-<div>
-<div class="hero__floating-text">Gift Box</div>
-<div class="hero__floating-sub">Perfect for sharing</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__content fade-in">
+        <div class="hero__badge"><span class="hero__badge-dot"></span> Proudly baking in Blantyre, Malawi – DM or WhatsApp to order</div>
+        <h1 class="hero__title">Cakes Made to <i>Remember</i></h1>
+        <p class="hero__desc">Custom celebration cakes for birthdays, weddings, graduations and the moments that matter. Handcrafted in Blantyre, delivered on time.</p>
+        <div class="price-banner"><strong>Quick pricing:</strong> Cupcake boxes from K30,000, Custom cakes from K85,000. See recent examples below.</div>
+        <div class="hero__actions">
+          <a href="#products" class="btn btn-primary btn-lg">Explore Our Menu</a>
+          <a href="#" class="btn btn-whatsapp btn-lg" id="heroWhatsappBtn">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+            Chat to Order
+          </a>
+          <a href="#" class="btn btn-outline btn-lg" id="enquiryTrigger">Quick Enquiry</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><div class="hero__stat-number">50+</div><div class="hero__stat-label">Unique Flavours</div></div>
+          <div class="hero__stat"><div class="hero__stat-number">10K+</div><div class="hero__stat-label">Happy Customers</div></div>
+          <div class="hero__stat"><div class="hero__stat-number">4.9</div><div class="hero__stat-label">Average Rating</div></div>
+        </div>
+      </div>
+      <div class="hero__image-wrapper fade-in">
+        <div class="hero__image-container">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="AJs Cakery Strawberry Dream Cupcake" class="hero__image" loading="eager">
+          <div class="hero__floating hero__floating--1"><div class="hero__floating-icon">⭐</div><div><div class="hero__floating-text">Top Rated</div><div class="hero__floating-sub">4.9/5 rating</div></div></div>
+          <div class="hero__floating hero__floating--2"><div class="hero__floating-icon">🎁</div><div><div class="hero__floating-text">Gift Box</div><div class="hero__floating-sub">Perfect for sharing</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ==========================================
-TRUST MARQUEE
+MARQUEE
 ========================================== -->
 <div class="marquee">
-<div class="marquee__track">
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-100% Local Ingredients
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-Baked Fresh Daily in Blantyre
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-Happiness Guaranteed
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-Blantyre Delivery
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-Small Batch Baking
-</div>
-<!-- Duplicate for seamless loop -->
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-100% Local Ingredients
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-Baked Fresh Daily in Blantyre
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-Happiness Guaranteed
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-Blantyre Delivery
-</div>
-<div class="marquee__item">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-Small Batch Baking
-</div>
-</div>
+  <div class="marquee__track">
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Local Ingredients</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Baked Fresh Daily</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg> Happiness Guaranteed</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg> Blantyre Delivery</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> Small Batch Baking</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Local Ingredients</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Baked Fresh Daily</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg> Happiness Guaranteed</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg> Blantyre Delivery</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> Small Batch Baking</div>
+  </div>
 </div>
 
 <!-- ==========================================
 PRODUCTS SECTION
 ========================================== -->
 <section class="section products" id="products">
-<div class="container">
-<div class="products__header fade-in">
-<div>
-<span class="script">Our Menu</span>
-<h2>Signature Collection</h2>
-<p class="lead" style="margin:0">Discover our most loved flavours, each crafted with premium ingredients and a touch of magic.</p>
-</div>
-<div class="products__filters">
-<button class="filter-btn active" data-filter="all">All</button>
-<button class="filter-btn" data-filter="birthdays">Birthdays</button>
-<button class="filter-btn" data-filter="weddings">Weddings</button>
-<button class="filter-btn" data-filter="corporate">Corporate</button>
-<button class="filter-btn" data-filter="seasonal">Seasonal</button>
-</div>
-</div>
-<div class="products__grid">
-<!-- Product 1 -->
-<div class="product-card fade-in" data-category="birthdays">
-<div class="product-card__img-wrapper">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="AJs Cakery Birthday Bash Cupcake" class="product-card__img" loading="lazy">
-<span class="product-card__badge">Popular</span>
-</div>
-<div class="product-card__content">
-<div class="product-card__cat">Birthday</div>
-<h3 class="product-card__name">Birthday Bash</h3>
-<p class="product-card__desc">Golden raspberry swirl with edible gold flakes and fresh berries.</p>
-<div class="product-card__rating">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-4.9 (128)
-</div>
-<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
-<button class="product-card__add" data-name="Birthday Bash" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Enquire via WhatsApp
-</button>
-</div>
-</div>
-<!-- Product 2 -->
-<div class="product-card fade-in" data-category="weddings">
-<div class="product-card__img-wrapper">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="AJs Cakery Chocolate Truffle Cupcake" class="product-card__img" loading="lazy">
-</div>
-<div class="product-card__content">
-<div class="product-card__cat">Wedding</div>
-<h3 class="product-card__name">Chocolate Truffle</h3>
-<p class="product-card__desc">Rich Belgian chocolate ganache with a dark chocolate curl.</p>
-<div class="product-card__rating">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-5.0 (204)
-</div>
-<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
-<button class="product-card__add" data-name="Chocolate Truffle" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Enquire via WhatsApp
-</button>
-</div>
-</div>
-<!-- Product 3 -->
-<div class="product-card fade-in" data-category="seasonal">
-<div class="product-card__img-wrapper">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png" alt="AJs Cakery Lemon Zest Cupcake" class="product-card__img" loading="lazy">
-<span class="product-card__badge" style="background: #4CAF50;">Seasonal</span>
-</div>
-<div class="product-card__content">
-<div class="product-card__cat">Seasonal</div>
-<h3 class="product-card__name">Lemon Zest</h3>
-<p class="product-card__desc">Tangy lemon curd filling with light vanilla sponge and citrus glaze.</p>
-<div class="product-card__rating">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-4.8 (85)
-</div>
-<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
-<button class="product-card__add" data-name="Lemon Zest" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Enquire via WhatsApp
-</button>
-</div>
-</div>
-<!-- Product 4 -->
-<div class="product-card fade-in" data-category="birthdays">
-<div class="product-card__img-wrapper">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="AJs Cakery Strawberry Dream Cupcake" class="product-card__img" loading="lazy">
-</div>
-<div class="product-card__content">
-<div class="product-card__cat">Birthday</div>
-<h3 class="product-card__name">Strawberry Dream</h3>
-<p class="product-card__desc">Fresh strawberry frosting with a whole cherry on top.</p>
-<div class="product-card__rating">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-4.7 (150)
-</div>
-<div class="product-card__price">From MWK 30,000 <span class="product-card__price-note">(box of 6)</span></div>
-<button class="product-card__add" data-name="Strawberry Dream" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-Enquire via WhatsApp
-</button>
-</div>
-</div>
-</div>
-<div class="text-center fade-in" style="margin-top: 64px;">
-<button class="btn btn-outline btn-lg" data-modal-trigger="whatsapp-modal">
-View Full Menu on WhatsApp
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-</button>
-</div>
-</div>
+  <div class="container">
+    <div class="products__header fade-in">
+      <div>
+        <span class="script">Our Menu</span>
+        <h2>Signature Collection</h2>
+        <p class="lead" style="margin:0">Every cake is a one-of-a-kind creation. Check our Instagram for real‑time examples and exact prices.</p>
+      </div>
+      <div class="products__filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="birthdays">Birthdays</button>
+        <button class="filter-btn" data-filter="weddings">Weddings</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+      </div>
+    </div>
+    <div class="products__grid">
+      <div class="product-card fade-in" data-category="birthdays">
+        <div class="product-card__img-wrapper">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="Birthday Bash Cupcake" class="product-card__img" loading="lazy">
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__cat">Birthday</div>
+          <h3 class="product-card__name">Birthday Bash</h3>
+          <p class="product-card__desc">Golden raspberry swirl. Recent order: Medium K135,000.</p>
+          <div class="product-card__rating">⭐⭐⭐⭐⭐ 4.9</div>
+          <div class="product-card__price">From K30,000</div>
+          <button class="product-card__add" data-name="Birthday Bash" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Enquire via WhatsApp
+          </button>
+        </div>
+      </div>
+      <div class="product-card fade-in" data-category="weddings">
+        <div class="product-card__img-wrapper">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="Chocolate Truffle" class="product-card__img" loading="lazy">
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__cat">Wedding</div>
+          <h3 class="product-card__name">Chocolate Truffle</h3>
+          <p class="product-card__desc">Rich Belgian chocolate. Small K95,000 as seen on Instagram.</p>
+          <div class="product-card__rating">⭐⭐⭐⭐⭐ 5.0</div>
+          <div class="product-card__price">From K30,000</div>
+          <button class="product-card__add" data-name="Chocolate Truffle" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Enquire via WhatsApp
+          </button>
+        </div>
+      </div>
+      <div class="product-card fade-in" data-category="seasonal">
+        <div class="product-card__img-wrapper">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png" alt="Lemon Zest" class="product-card__img" loading="lazy">
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__cat">Seasonal</div>
+          <h3 class="product-card__name">Lemon Zest</h3>
+          <p class="product-card__desc">Tangy lemon curd. Perfect for summer.</p>
+          <div class="product-card__rating">⭐⭐⭐⭐⭐ 4.8</div>
+          <div class="product-card__price">From K30,000</div>
+          <button class="product-card__add" data-name="Lemon Zest" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Enquire via WhatsApp
+          </button>
+        </div>
+      </div>
+      <div class="product-card fade-in" data-category="birthdays">
+        <div class="product-card__img-wrapper">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="Strawberry Dream" class="product-card__img" loading="lazy">
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__cat">Birthday</div>
+          <h3 class="product-card__name">Strawberry Dream</h3>
+          <p class="product-card__desc">Fresh strawberry frosting. Recent order large K120,000.</p>
+          <div class="product-card__rating">⭐⭐⭐⭐⭐ 4.7</div>
+          <div class="product-card__price">From K30,000</div>
+          <button class="product-card__add" data-name="Strawberry Dream" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Enquire via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="text-center fade-in" style="margin-top: 64px;">
+      <a href="#" class="btn btn-outline btn-lg" id="menuEnquiryBtn">View Full Menu – Enquire Now</a>
+    </div>
+  </div>
 </section>
 
 <!-- ==========================================
-CUSTOM ORDER WORKFLOW SECTION
+INSTAGRAM FEED
+========================================== -->
+<section class="instagram-feed" id="instagram-feed">
+  <div class="container text-center fade-in">
+    <span class="script">Latest Bakes</span>
+    <h2>Fresh from Instagram</h2>
+    <p class="lead">See what's baking right now. DM us on Instagram <a href="https://instagram.com/____ajs_cakery" target="_blank" style="color:var(--pink-400);">@____ajs_cakery</a> to order yours.</p>
+    <div class="insta-grid">
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYjV-4CIV2a/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="Medium chocolate cake K135,000"></a></div>
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYjKmnFI3h9/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="Minecraft themed small cake K107,000"></a></div>
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYexYJxIXnq/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png" alt="Small chocolate cake K95,000"></a></div>
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYW9_sNoWwg/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="Large vanilla cake K120,000"></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+CUSTOM ORDER WORKFLOW
 ========================================== -->
 <section class="section custom-order" id="custom-order">
-<div class="container">
-<div class="text-center fade-in">
-<span class="script">Your Vision, Our Craft</span>
-<h2>How Custom Orders Work</h2>
-<p class="lead">Three simple steps to a cake that's uniquely yours.</p>
-</div>
-<div class="custom-order__steps">
-<div class="custom-order__step fade-in">
-<div class="custom-order__icon">💬</div>
-<h3 style="margin-bottom:8px">1. Tell Us Your Vision</h3>
-<p style="color:var(--text-mid); font-size:0.95rem">DM us on WhatsApp or Instagram with your event details, theme, and preferences.</p>
-</div>
-<div class="custom-order__step fade-in">
-<div class="custom-order__icon">🎨</div>
-<h3 style="margin-bottom:8px">2. We Design and Confirm</h3>
-<p style="color:var(--text-mid); font-size:0.95rem">You'll receive a mockup and quote within 24 hours. No surprises, just clarity.</p>
-</div>
-<div class="custom-order__step fade-in">
-<div class="custom-order__icon">🎂</div>
-<h3 style="margin-bottom:8px">3. We Deliver, You Shine</h3>
-<p style="color:var(--text-mid); font-size:0.95rem">Your cake arrives fresh, on time, and ready to be the highlight of your event.</p>
-</div>
-</div>
-<div class="text-center" style="margin-top:40px">
-<button class="btn btn-primary" data-modal-trigger="whatsapp-modal">Start Your Custom Order</button>
-</div>
-</div>
+  <div class="container text-center">
+    <div class="fade-in">
+      <span class="script">Your Vision, Our Craft</span>
+      <h2>How Custom Orders Work</h2>
+      <p class="lead">Three simple steps to a cake that's uniquely yours.</p>
+    </div>
+    <div class="custom-order__steps">
+      <div class="custom-order__step fade-in">
+        <div class="custom-order__icon">💬</div>
+        <h3>1. Tell Us Your Vision</h3>
+        <p>DM us on WhatsApp or Instagram with your event details, theme, and preferences.</p>
+      </div>
+      <div class="custom-order__step fade-in">
+        <div class="custom-order__icon">🎨</div>
+        <h3>2. We Design and Confirm</h3>
+        <p>You'll receive a mockup and quote within 24 hours.</p>
+      </div>
+      <div class="custom-order__step fade-in">
+        <div class="custom-order__icon">🎂</div>
+        <h3>3. We Deliver, You Shine</h3>
+        <p>Your cake arrives fresh, on time, ready to be the highlight.</p>
+      </div>
+    </div>
+    <div class="text-center fade-in" style="margin-top:40px">
+      <a href="#" class="btn btn-primary btn-lg" id="customOrderBtn">Start Your Custom Order</a>
+    </div>
+  </div>
 </section>
 
 <!-- ==========================================
 ABOUT SECTION
 ========================================== -->
 <section class="section about" id="about">
-<div class="container">
-<div class="about__inner">
-<div class="about__images fade-in">
-<div class="about__img-main">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1b41edb9d-b81d-44ca-8375-5ce731bde251.png" alt="AJs Cakery Baker piping frosting" loading="lazy">
-</div>
-<div class="about__img-sec">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1210dccee-413b-4a4e-814c-ccb3a78d291c.png" alt="AJs Cakery Pink Sprinkles Detail" loading="lazy">
-</div>
-<div class="about__experience">
-<span class="about__exp-number">1:1</span>
-<span class="about__exp-text">Personal<br>Service</span>
-</div>
-</div>
-<div class="about__content fade-in">
-<span class="script">One Baker, One Promise</span>
-<h2>Every Cake Is Made by Someone Who Cares</h2>
-<p class="about__text">
-I'm AJ, the hands behind every cake, the eyes checking every detail. No factories, no shortcuts. Just one person in a Blantyre kitchen, making sure your celebration cake turns out exactly how you dreamed.
-</p>
-<p class="about__text">
-When you order from AJs Cakery, you're not getting a faceless brand. You're getting a partner who remembers your event matters.
-</p>
-<div class="about__features">
-<div class="about__feat">
-<div class="about__feat-icon">✨</div>
-<div>
-<div class="about__feat-title">Made Just for You</div>
-<div class="about__feat-desc">Custom designs, your colours, your theme</div>
-</div>
-</div>
-<div class="about__feat">
-<div class="about__feat-icon">✅</div>
-<div>
-<div class="about__feat-title">On-Time Guarantee</div>
-<div class="about__feat-desc">Your cake arrives when promised, or it's on us</div>
-</div>
-</div>
-<div class="about__feat">
-<div class="about__feat-icon">🌿</div>
-<div>
-<div class="about__feat-title">Local Ingredients</div>
-<div class="about__feat-desc">Supporting Malawian suppliers where possible</div>
-</div>
-</div>
-<div class="about__feat">
-<div class="about__feat-icon">🎁</div>
-<div>
-<div class="about__feat-title">Gift Packaging</div>
-<div class="about__feat-desc">Beautiful presentation for special occasions</div>
-</div>
-</div>
-</div>
-<button class="btn btn-primary btn-lg" data-modal-trigger="whatsapp-modal">
-Chat About Your Event
-</button>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="about__inner">
+      <div class="about__images fade-in">
+        <div class="about__img-main"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1b41edb9d-b81d-44ca-8375-5ce731bde251.png" alt="Baker piping frosting" loading="lazy"></div>
+        <div class="about__img-sec"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1210dccee-413b-4a4e-814c-ccb3a78d291c.png" alt="Pink Sprinkles Detail" loading="lazy"></div>
+        <div class="about__experience"><span class="about__exp-number">1:1</span><span class="about__exp-text">Personal<br>Service</span></div>
+      </div>
+      <div class="about__content fade-in">
+        <span class="script">One Baker, One Promise</span>
+        <h2>Every Cake Is Made by Someone Who Cares</h2>
+        <p class="about__text">I'm AJ – the hands behind every cake, the eyes checking every detail. No factories, no shortcuts. Just one person in a Blantyre kitchen.</p>
+        <p class="about__text">When you order from AJs Cakery, you're not getting a faceless brand. You're getting a partner who remembers your event matters.</p>
+        <div class="about__features">
+          <div class="about__feat"><div class="about__feat-icon">✨</div><div><div class="about__feat-title">Made Just for You</div><div class="about__feat-desc">Custom designs, your colours</div></div></div>
+          <div class="about__feat"><div class="about__feat-icon">✅</div><div><div class="about__feat-title">On-Time Guarantee</div><div class="about__feat-desc">Your cake arrives when promised</div></div></div>
+          <div class="about__feat"><div class="about__feat-icon">🌿</div><div><div class="about__feat-title">Local Ingredients</div><div class="about__feat-desc">Supporting Malawian suppliers</div></div></div>
+          <div class="about__feat"><div class="about__feat-icon">🎁</div><div><div class="about__feat-title">Gift Packaging</div><div class="about__feat-desc">Beautiful presentation</div></div></div>
+        </div>
+        <a href="#" class="btn btn-primary btn-lg" id="aboutWhatsappBtn">Chat About Your Event</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ==========================================
 OFFER BANNER
 ========================================== -->
 <section class="offer">
-<div class="container">
-<div class="offer__card fade-in">
-<div class="offer__content">
-<div class="offer__discount">20% Off</div>
-<h2 class="offer__title">Summer Celebration Special</h2>
-<p class="offer__desc">
-Get 20% off our entire seasonal collection! Use code <strong style="color: var(--pink-400);">CELEBRATE20</strong> at checkout. Limited time offer, don't miss out on these delicious flavours.
-</p>
-<div class="offer__countdown">
-<div class="offer__count-item">
-<div class="offer__count-number" id="days">02</div>
-<div class="offer__count-label">Days</div>
-</div>
-<div class="offer__count-item">
-<div class="offer__count-number" id="hours">14</div>
-<div class="offer__count-label">Hours</div>
-</div>
-<div class="offer__count-item">
-<div class="offer__count-number" id="minutes">36</div>
-<div class="offer__count-label">Mins</div>
-</div>
-<div class="offer__count-item">
-<div class="offer__count-number" id="seconds">48</div>
-<div class="offer__count-label">Secs</div>
-</div>
-</div>
-<a href="#products" class="btn btn-primary btn-lg">
-Shop the Sale
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-</a>
-</div>
-<div class="offer__image">
-<img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1ac0ba99b-8384-48e3-995b-95f1dc2cf610.png" alt="AJs Cakery Cupcake Assortment" loading="lazy">
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="offer__card fade-in">
+      <div class="offer__content">
+        <div class="offer__discount">20% Off</div>
+        <h2 class="offer__title">Summer Celebration Special</h2>
+        <p class="offer__desc">Get 20% off our entire seasonal collection! Use code <strong style="color:var(--pink-400);">CELEBRATE20</strong> at checkout. Limited time offer – ends June 30, 2026.</p>
+        <div class="offer__countdown">
+          <div class="offer__count-item"><div class="offer__count-number" id="days">00</div><div class="offer__count-label">Days</div></div>
+          <div class="offer__count-item"><div class="offer__count-number" id="hours">00</div><div class="offer__count-label">Hours</div></div>
+          <div class="offer__count-item"><div class="offer__count-number" id="minutes">00</div><div class="offer__count-label">Mins</div></div>
+          <div class="offer__count-item"><div class="offer__count-number" id="seconds">00</div><div class="offer__count-label">Secs</div></div>
+        </div>
+        <a href="#products" class="btn btn-primary btn-lg">Shop the Sale</a>
+      </div>
+      <div class="offer__image"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1ac0ba99b-8384-48e3-995b-95f1dc2cf610.png" alt="Cupcake Assortment" loading="lazy"></div>
+    </div>
+  </div>
 </section>
 
 <!-- ==========================================
 TESTIMONIALS
 ========================================== -->
 <section class="section testimonials" id="testimonials">
-<div class="container">
-<div class="text-center fade-in">
-<span class="script">Love Notes</span>
-<h2>What Our Customers Say</h2>
-<p class="lead">Don't just take our word for it, hear from our happy cupcake lovers in Blantyre.</p>
-</div>
-<div class="testimonials__grid">
-<div class="testimonial-card fade-in">
-<div class="testimonial-card__quote">"</div>
-<div class="testimonial-card__stars">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-</div>
-<p class="testimonial-card__text">The Birthday Bash cupcakes were absolutely divine! I ordered a dozen for my daughter's party and everyone was raving about them. AJ made her day special.</p>
-<div class="testimonial-card__author">
-<div class="testimonial-card__avatar">T</div>
-<div>
-<div class="testimonial-card__name">Tiyamike Banda</div>
-<div class="testimonial-card__role">Birthday Client, Blantyre</div>
-</div>
-</div>
-</div>
-<div class="testimonial-card fade-in">
-<div class="testimonial-card__quote">"</div>
-<div class="testimonial-card__stars">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-</div>
-<p class="testimonial-card__text">Best cakes in Blantyre, hands down! The Chocolate Truffle is my go-to every Friday afternoon. The quality and freshness are consistently outstanding. Highly recommend!</p>
-<div class="testimonial-card__author">
-<div class="testimonial-card__avatar">J</div>
-<div>
-<div class="testimonial-card__name">Jeanette Mwale</div>
-<div class="testimonial-card__role">Food Enthusiast, Blantyre</div>
-</div>
-</div>
-</div>
-<div class="testimonial-card fade-in">
-<div class="testimonial-card__quote">"</div>
-<div class="testimonial-card__stars">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-</div>
-<p class="testimonial-card__text">We ordered custom cupcakes for our wedding and they were absolutely stunning! Not only beautiful but incredibly delicious. Our guests couldn't stop talking about them.</p>
-<div class="testimonial-card__author">
-<div class="testimonial-card__avatar">E</div>
-<div>
-<div class="testimonial-card__name">Esther and Moses</div>
-<div class="testimonial-card__role">Wedding Clients, Blantyre</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="container text-center">
+    <div class="fade-in">
+      <span class="script">Love Notes</span>
+      <h2>What Our Customers Say</h2>
+      <p class="lead">Real feedback from recent orders in Blantyre.</p>
+    </div>
+    <div class="testimonials__grid">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-card__quote">"</div>
+        <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-card__text">The Birthday Bash cupcakes were divine! AJ made my daughter's party unforgettable. Fresh, beautiful, and exactly on time.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">T</div>
+          <div><div class="testimonial-card__name">T. Banda</div><div class="testimonial-card__role">Recent order · Blantyre</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-card__quote">"</div>
+        <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-card__text">Chocolate Truffle is my go‑to. Consistent quality every single time. Highly recommend for any celebration.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">J</div>
+          <div><div class="testimonial-card__name">J. Mwale</div><div class="testimonial-card__role">Regular customer · Blantyre</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-card__quote">"</div>
+        <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-card__text">Custom wedding cupcakes that were almost too pretty to eat. Our guests couldn't stop talking about them.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">E</div>
+          <div><div class="testimonial-card__name">E. & M.</div><div class="testimonial-card__role">Wedding · Blantyre</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ==========================================
 NEWSLETTER
 ========================================== -->
 <div class="newsletter" id="contact">
-<div class="container">
-<div class="newsletter__inner fade-in">
-<span class="script">Stay Sweet</span>
-<h2>Get First Access to New Flavours</h2>
-<p class="lead">Subscribe to get exclusive offers, seasonal announcements, and celebration tips delivered to your inbox.</p>
-<form class="newsletter__form" onsubmit="handleSubscribe(event)">
-<input type="email" class="newsletter__input" placeholder="Enter your email address" required>
-<button type="submit" class="newsletter__btn">Subscribe</button>
-</form>
-<p class="newsletter__privacy">We respect your privacy. Unsubscribe at any time.</p>
-</div>
-</div>
+  <div class="container text-center fade-in">
+    <span class="script">Stay Sweet</span>
+    <h2>Get First Access to New Flavours</h2>
+    <p class="lead">Subscribe for exclusive offers, seasonal announcements, and celebration tips.</p>
+    <form class="newsletter__form" onsubmit="handleSubscribe(event)">
+      <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
+      <button type="submit" class="newsletter__btn">Subscribe</button>
+    </form>
+    <p class="newsletter__privacy">No spam, just sweetness. We respect your privacy.</p>
+  </div>
 </div>
 
 <!-- ==========================================
 FOOTER
 ========================================== -->
 <footer class="footer">
-<div class="container">
-<div class="footer__top">
-<div>
-<a href="#home" class="nav__logo">
-<div class="nav__logo-icon">🎂</div>
-AJs <span>Cakery</span>
-</a>
-<p class="footer__brand-desc">Handcrafted celebration cakes and cupcakes baked fresh daily with love. Baked with love in Blantyre by AJ.</p>
-<div class="footer__social">
-<a href="https://instagram.com/ajscakery.mw" class="footer__social-link" aria-label="Instagram" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-</a>
-<a href="#" class="footer__social-link" aria-label="WhatsApp" data-modal-trigger="whatsapp-modal">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
-</a>
-</div>
-<div style="margin-top:16px; font-size:0.85rem; color:var(--text-soft)">
-Follow our work: <a href="https://instagram.com/ajscakery.mw" style="color:var(--pink-400); font-weight:500" target="_blank">@ajscakery.mw</a>
-</div>
-</div>
-<div>
-<h3 class="footer__heading">Quick Links</h3>
-<div class="footer__links">
-<a href="#home" class="footer__link">Home</a>
-<a href="#products" class="footer__link">Menu</a>
-<a href="#custom-order" class="footer__link">Custom Orders</a>
-<a href="#about" class="footer__link">Our Story</a>
-<a href="#testimonials" class="footer__link">Reviews</a>
-</div>
-</div>
-<div>
-<h3 class="footer__heading">Categories</h3>
-<div class="footer__links">
-<a href="#" class="footer__link">Birthday Cakes</a>
-<a href="#" class="footer__link">Wedding Cakes</a>
-<a href="#" class="footer__link">Corporate Orders</a>
-<a href="#" class="footer__link">Cupcake Boxes</a>
-<a href="#" class="footer__link">Seasonal Specials</a>
-</div>
-</div>
-<div>
-<h3 class="footer__heading">Contact Us</h3>
-<div class="footer__links">
-<a href="#" class="footer__link">Blantyre, Malawi</a>
-<a href="tel:+265992030757" class="footer__link">+265 992 030 757</a>
-<a href="mailto:hello@ajscakery.mw" class="footer__link">hello@ajscakery.mw</a>
-</div>
-</div>
-</div>
-<div class="footer__bottom">
-<p class="footer__copyright">© 2026 AJs Cakery ✨ Baked with love by AJ 🎂</p>
-<div class="footer__links" style="flex-direction:row; gap:24px;">
-<a href="#" class="footer__link">Privacy</a>
-<a href="#" class="footer__link">Terms</a>
-</div>
-</div>
-</div>
-</footer>
-
-<button class="back-to-top" id="backToTop" aria-label="Return to menu">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<!-- ==========================================
-WHATSAPP MODAL
-========================================== -->
-<div class="modal-overlay" id="whatsapp-modal" aria-hidden="true">
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" aria-label="Close">&times;</button>
-    
-    <!-- Form Content -->
-    <div class="modal-form-content">
-      <h2 id="modal-title">Start Your Order</h2>
-      <p class="modal-desc">Tell us about your celebration and we'll get back to you within 2 hours.</p>
-      <form id="whatsapp-form">
-        <div class="form-group">
-          <label for="wa-name">Full Name *</label>
-          <input type="text" id="wa-name" name="name" required placeholder="Your name">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="nav__logo"><div class="nav__logo-icon">🎂</div>AJs <span>Cakery</span></div>
+        <p class="footer__brand-desc">Handcrafted celebration cakes in Blantyre, Malawi. Delivery available within Blantyre city limits.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/____ajs_cakery" class="footer__social-link" target="_blank" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+          </a>
+          <a href="https://wa.me/265992030757" class="footer__social-link" target="_blank" aria-label="WhatsApp">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+          </a>
         </div>
-        <div class="form-group">
-          <label for="wa-service">Service Type *</label>
-          <select id="wa-service" name="service" required>
-            <option value="">Select an option</option>
-            <option value="Birthday Cake">Birthday Cake</option>
-            <option value="Wedding Cake">Wedding Cake</option>
-            <option value="Graduation Cake">Graduation Cake</option>
-            <option value="Corporate Order">Corporate Order</option>
-            <option value="Cupcake Box">Cupcake Box (6 pcs)</option>
-            <option value="Other">Other</option>
-          </select>
+      </div>
+      <div>
+        <h3 class="footer__heading">Quick Links</h3>
+        <div class="footer__links">
+          <a href="#home" class="footer__link">Home</a>
+          <a href="#products" class="footer__link">Menu</a>
+          <a href="#custom-order" class="footer__link">Custom Orders</a>
+          <a href="#about" class="footer__link">Our Story</a>
+          <a href="#testimonials" class="footer__link">Reviews</a>
         </div>
-        <div class="form-group">
-          <label for="wa-date">Preferred Date *</label>
-          <input type="date" id="wa-date" name="date" required>
+      </div>
+      <div>
+        <h3 class="footer__heading">Categories</h3>
+        <div class="footer__links">
+          <a href="#" class="footer__link">Birthday Cakes</a>
+          <a href="#" class="footer__link">Wedding Cakes</a>
+          <a href="#" class="footer__link">Corporate Orders</a>
+          <a href="#" class="footer__link">Cupcake Boxes</a>
+          <a href="#" class="footer__link">Seasonal Specials</a>
         </div>
-        <div class="form-group">
-          <label for="wa-details">Additional Details</label>
-          <textarea id="wa-details" name="details" rows="4" placeholder="Theme, colours, dietary requirements, delivery address, etc."></textarea>
+      </div>
+      <div>
+        <h3 class="footer__heading">Contact</h3>
+        <div class="footer__links">
+          <span class="footer__link">Blantyre, Malawi</span>
+          <a href="tel:+265992030757" class="footer__link">+265 992 030 757</a>
+          <a href="mailto:hello@ajscakery.mw" class="footer__link">hello@ajscakery.mw</a>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">Continue to WhatsApp</button>
-      </form>
-    </div>
-
-    <!-- Success State -->
-    <div class="modal-success" hidden>
-      <div style="text-align:center; padding: 2rem 0;">
-        <div style="font-size:3rem; margin-bottom:1rem;">✅</div>
-        <h3>Opening WhatsApp...</h3>
-        <p style="color:var(--text-mid); margin:1rem 0;">Your message is ready to send. Just tap "Send" in WhatsApp to complete your enquiry.</p>
-        <button class="btn btn-outline modal-close-success">Close</button>
       </div>
     </div>
+    <div class="footer__bottom">
+      <span>© 2026 AJs Cakery ✨ Baked with love by AJ 🎂</span>
+      <div style="display:flex; gap:24px;">
+        <a href="#" class="footer__link">Privacy</a>
+        <a href="#" class="footer__link">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================
+BACK TO TOP
+========================================== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- ==========================================
+FLOATING WHATSAPP (MOBILE)
+========================================== -->
+<a href="https://wa.me/265992030757?text=Hello%20AJ!%20I'd%20like%20to%20order%20a%20cake." class="floating-whatsapp" id="floatingWhatsapp" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- ==========================================
+ENQUIRY MODAL
+========================================== -->
+<div class="modal-overlay" id="enquiry-modal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="enquiry-title">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <h2 id="enquiry-title">Quick Enquiry</h2>
+    <p class="lead" style="margin-bottom:24px; color:var(--text-mid); font-size:0.95rem;">Fill in your details and we'll open a pre‑written WhatsApp message ready to send.</p>
+    <form id="enquiry-form">
+      <div class="form-group">
+        <label for="enq-name">Your Name *</label>
+        <input type="text" id="enq-name" name="name" required placeholder="e.g. Thandiwe">
+      </div>
+      <div class="form-group">
+        <label for="enq-service">What are you looking for? *</label>
+        <select id="enq-service" name="service" required>
+          <option value="">Select an option</option>
+          <option value="Birthday Cake">Birthday Cake</option>
+          <option value="Wedding Cake">Wedding Cake</option>
+          <option value="Graduation Cake">Graduation Cake</option>
+          <option value="Corporate Order">Corporate Order</option>
+          <option value="Cupcake Box">Cupcake Box (6 pcs)</option>
+          <option value="Custom Themed Cake">Custom Themed Cake (Minecraft, Batman, etc.)</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="enq-date">Preferred Date (optional)</label>
+        <input type="date" id="enq-date" name="date">
+      </div>
+      <div class="form-group">
+        <label for="enq-details">Additional Details</label>
+        <textarea id="enq-details" name="details" rows="4" placeholder="Theme, colours, size, dietary requirements, delivery address..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Continue to WhatsApp</button>
+    </form>
   </div>
 </div>
 
 <!-- ==========================================
-JAVASCRIPT
+GSAP & JAVASCRIPT
 ========================================== -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+
 <script>
 // ==========================================
-// CURRENCY CONFIGURATION - MALAWI
+// GSAP REGISTRATION
 // ==========================================
-const CURRENCY = 'MWK';
-function formatPrice(amount) {
-  return `${CURRENCY} ${amount.toLocaleString('en-MW')}`;
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// ==========================================
+// PREMIUM MENU SYSTEM
+// ==========================================
+const menuOverlay = document.getElementById('menuOverlay');
+const menuLeft = document.getElementById('menuLeft');
+const menuRight = document.getElementById('menuRight');
+const menuCloseBtn = document.getElementById('menuCloseBtn');
+const hamburger = document.getElementById('hamburger');
+
+let menuTl = null;
+function createMenuTimeline() {
+  if (!window.gsap) {
+    menuOverlay.style.transition = 'transform 0.5s ease';
+    return null;
+  }
+  menuTl = gsap.timeline({ paused: true, reversed: true });
+  menuTl
+    .to(menuOverlay, { y: "0%", duration: 0.9, ease: "power4.inOut" })
+    .to(menuLeft, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.5")
+    .to(menuRight, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.6")
+    .from(".menu-left nav a", { y: 40, opacity: 0, stagger: 0.08, duration: 0.6 }, "-=0.3")
+    .to(".menu-right .menu-image", { scale: 1, duration: 0.8 }, "-=0.5")
+    .to(".menu-brand", { opacity: 1, y: 0, duration: 0.5 }, "-=0.2");
+  return menuTl;
 }
 
-// CART STATE
-const cartState = [];
+function openMenu() {
+  if (!menuTl) createMenuTimeline();
+  if (menuTl) {
+    menuTl.timeScale(1).play();
+  } else {
+    menuOverlay.style.transform = 'translateY(0)';
+  }
+  hamburger.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  menuCloseBtn.focus();
+}
+
+function closeMenu() {
+  if (menuTl) {
+    menuTl.timeScale(1.5).reverse();
+  } else {
+    menuOverlay.style.transform = 'translateY(-100%)';
+  }
+  hamburger.classList.remove('active');
+  document.body.style.overflow = '';
+  hamburger.focus();
+}
+
+hamburger.addEventListener('click', () => {
+  if (hamburger.classList.contains('active')) closeMenu();
+  else openMenu();
+});
+menuCloseBtn.addEventListener('click', closeMenu);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && hamburger.classList.contains('active')) closeMenu();
+});
+
+// Focus trap inside overlay
+menuOverlay.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab') {
+    const focusable = menuOverlay.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+// Overlay link clicks → smooth scroll and close
+document.querySelectorAll('.overlay-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    closeMenu();
+    if (target && window.gsap) {
+      gsap.to(window, { duration: 0.8, scrollTo: { y: target, offsetY: 80 }, ease: "power2.inOut" });
+    } else if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ==========================================
+// CUSTOM CURSOR (DESKTOP ONLY)
+// ==========================================
+if (!('ontouchstart' in window) && window.gsap) {
+  const cursor = document.createElement('div');
+  cursor.classList.add('cursor');
+  document.body.appendChild(cursor);
+  document.addEventListener('mousemove', (e) => {
+    gsap.to(cursor, { x: e.clientX - 10, y: e.clientY - 10, duration: 0.2, ease: "power2.out" });
+  });
+  document.querySelectorAll('a, button, .nav__hamburger, .filter-btn, .product-card__add').forEach(el => {
+    el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 1.5, duration: 0.3 }));
+    el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, duration: 0.3 }));
+  });
+}
+
+// ==========================================
+// CART SYSTEM (with localStorage)
+// ==========================================
+const CURRENCY = 'MWK';
+function formatPrice(amount) { return `${CURRENCY} ${amount.toLocaleString('en-MW')}`; }
+
+let cartState = JSON.parse(localStorage.getItem('ajsCart')) || [];
 const cartOverlay = document.getElementById('cartOverlay');
 const cartBody = document.getElementById('cartBody');
 const cartBadge = document.getElementById('cartBadge');
 const cartTotal = document.getElementById('cartTotal');
+const cartCheckoutBtn = document.getElementById('cartCheckoutBtn');
 
+function saveCart() { localStorage.setItem('ajsCart', JSON.stringify(cartState)); }
 function updateCartUI() {
   if (cartState.length === 0) {
-    cartBody.innerHTML = '<div class="cart-drawer__empty">Your celebration starts here: browse our collection 🎂</div>';
+    cartBody.innerHTML = '<div class="cart-drawer__empty">Your celebration starts here 🎂</div>';
     cartBadge.classList.remove('visible');
   } else {
     cartBadge.classList.add('visible');
     cartBadge.textContent = cartState.length;
-    cartBody.innerHTML = cartState.map((item, index) => `
+    cartBody.innerHTML = cartState.map((item, idx) => `
       <div class="cart-item">
-        <img src="${item.img}" alt="${item.name}" class="cart-item__img">
+        <img src="${item.img || 'https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png'}" class="cart-item__img" alt="${item.name}">
         <div class="cart-item__info">
           <div class="cart-item__name">${item.name}</div>
           <div class="cart-item__price">${formatPrice(item.price)}</div>
-          <button style="font-size:0.75rem; color:var(--pink-400); margin-top:4px; font-weight:600;" onclick="removeFromCart(${index})">Remove</button>
+          <button style="color:var(--pink-400); font-size:0.8rem; font-weight:600;" onclick="removeFromCart(${idx})">Remove</button>
         </div>
       </div>
     `).join('');
   }
   const total = cartState.reduce((sum, item) => sum + item.price, 0);
   cartTotal.textContent = formatPrice(total);
+  saveCart();
 }
-window.removeFromCart = function(index) { cartState.splice(index, 1); updateCartUI(); };
+window.removeFromCart = function(index) {
+  cartState.splice(index, 1);
+  updateCartUI();
+  showToast('Item removed');
+};
 
+// Add to cart
 document.querySelectorAll('.product-card__add').forEach(btn => {
   btn.addEventListener('click', function() {
-    cartState.push({ name: this.dataset.name, price: parseFloat(this.dataset.price), img: this.dataset.img });
-    updateCartUI();
+    const name = this.dataset.name;
     const price = parseFloat(this.dataset.price);
-    showToast(`Added to cart! ${formatPrice(price)}`);
+    const img = this.dataset.img || '';
+    cartState.push({ name, price, img });
+    updateCartUI();
+    showToast(`Added! ${formatPrice(price)}`);
+    
+    // Visual feedback
     const orig = this.innerHTML;
     this.innerHTML = '✓ Added!';
     this.style.background = '#4CAF50';
     this.style.color = '#fff';
     this.style.borderColor = '#4CAF50';
-    setTimeout(() => { this.innerHTML = orig; this.style.background = ''; this.style.color = ''; this.style.borderColor = ''; }, 1500);
+    setTimeout(() => {
+      this.innerHTML = orig;
+      this.style.background = '';
+      this.style.color = '';
+      this.style.borderColor = '';
+    }, 1500);
   });
 });
 
-// TOAST NOTIFICATION
-function showToast(message) {
-  const toast = document.createElement('div');
-  toast.style.position = 'fixed';
-  toast.style.bottom = '30px';
-  toast.style.left = '50%';
-  toast.style.transform = 'translateX(-50%) translateY(20px)';
-  toast.style.background = '#2D1B2E';
-  toast.style.color = 'white';
-  toast.style.padding = '14px 28px';
-  toast.style.borderRadius = '50px';
-  toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
-  toast.style.zIndex = '10000';
-  toast.style.opacity = '0';
-  toast.style.transition = 'all 0.4s ease';
-  toast.textContent = message;
-  document.body.appendChild(toast);
-  requestAnimationFrame(() => { toast.style.opacity = '1'; toast.style.transform = 'translateX(-50%) translateY(0)'; });
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transform = 'translateX(-50%) translateY(20px)';
-    setTimeout(() => toast.remove(), 400);
-  }, 2200);
-}
+// Cart checkout → pre‑filled WhatsApp
+cartCheckoutBtn.addEventListener('click', () => {
+  if (cartState.length === 0) return;
+  const itemsList = cartState.map(item => `• ${item.name} – ${formatPrice(item.price)}`).join('\n');
+  const total = cartState.reduce((sum, item) => sum + item.price, 0);
+  const message = `Hi AJ! I'd like to order:\n\n${itemsList}\n\nTotal: ${formatPrice(total)}\n\n(Sent via ajscakery.mw)`;
+  window.open(`https://wa.me/265992030757?text=${encodeURIComponent(message)}`, '_blank');
+});
 
+// Cart drawer toggle
 document.getElementById('cartToggle').addEventListener('click', () => cartOverlay.classList.add('active'));
 document.getElementById('cartClose').addEventListener('click', () => cartOverlay.classList.remove('active'));
 cartOverlay.addEventListener('click', (e) => { if (e.target === cartOverlay) cartOverlay.classList.remove('active'); });
 
-// NAV & SCROLL
+// ==========================================
+// DIRECT WHATSAPP BUTTONS
+// ==========================================
+document.getElementById('heroWhatsappBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('https://wa.me/265992030757?text=Hello%20AJ!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20order%20a%20cake.', '_blank');
+});
+document.getElementById('navWhatsappBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('https://wa.me/265992030757?text=Hello%20AJ!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20order%20a%20cake.', '_blank');
+});
+document.getElementById('aboutWhatsappBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('https://wa.me/265992030757?text=Hi%20AJ!%20I%27d%20like%20to%20chat%20about%20a%20custom%20event%20cake.', '_blank');
+});
+document.getElementById('customOrderBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('https://wa.me/265992030757?text=Hi%20AJ!%20I%27d%20like%20to%20start%20a%20custom%20order.', '_blank');
+});
+
+// ==========================================
+// ENQUIRY MODAL (structured pre‑fill)
+// ==========================================
+const enquiryModal = document.getElementById('enquiry-modal');
+const enquiryForm = document.getElementById('enquiry-form');
+
+function openEnquiryModal() {
+  enquiryModal.classList.add('active');
+  enquiryModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('enq-name').focus();
+}
+
+function closeEnquiryModal() {
+  enquiryModal.classList.remove('active');
+  enquiryModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Trigger buttons
+document.getElementById('enquiryTrigger').addEventListener('click', (e) => {
+  e.preventDefault();
+  openEnquiryModal();
+});
+document.getElementById('menuEnquiryBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  openEnquiryModal();
+});
+
+// Close buttons
+enquiryModal.querySelector('.modal-close').addEventListener('click', closeEnquiryModal);
+enquiryModal.addEventListener('click', (e) => {
+  if (e.target === enquiryModal) closeEnquiryModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && enquiryModal.classList.contains('active')) closeEnquiryModal();
+});
+
+// Form submit → build pre‑filled WhatsApp message
+enquiryForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const name = document.getElementById('enq-name').value.trim();
+  const service = document.getElementById('enq-service').value;
+  const date = document.getElementById('enq-date').value;
+  const details = document.getElementById('enq-details').value.trim();
+  
+  const messageParts = [
+    `Hi AJ! My name is ${name}.`,
+    '',
+    `I'm interested in: ${service || 'a custom cake'}`,
+    date ? `Preferred date: ${date}` : '',
+    details ? `Additional details: ${details}` : '',
+    '',
+    '(Sent via ajscakery.mw)'
+  ];
+  
+  const message = messageParts.filter(line => line !== '').join('\n');
+  
+  window.open(`https://wa.me/265992030757?text=${encodeURIComponent(message)}`, '_blank');
+  
+  closeEnquiryModal();
+  enquiryForm.reset();
+  showToast('Opening WhatsApp with your message...');
+});
+
+// ==========================================
+// SCROLL ANIMATIONS (GSAP ScrollTrigger)
+// ==========================================
+if (window.gsap) {
+  gsap.utils.toArray('.fade-in').forEach(el => {
+    gsap.fromTo(el, 
+      { opacity: 0, y: 30 },
+      { 
+        opacity: 1, y: 0, duration: 0.6,
+        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+}
+
+// ==========================================
+// NAV SCROLL EFFECTS
+// ==========================================
 const nav = document.getElementById('nav');
 const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
@@ -1313,232 +1195,116 @@ window.addEventListener('scroll', () => {
   backToTop.classList.toggle('visible', window.scrollY > 500);
 });
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
 document.querySelector('.nav__logo').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// MOBILE MENU - FIXED TOGGLE
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-function toggleMobileMenu() {
-  hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-}
-
-hamburger.addEventListener('click', toggleMobileMenu);
-
-document.querySelectorAll('[data-mobile-link]').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
-  });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (mobileMenu.classList.contains('active') && 
-      !mobileMenu.contains(e.target) && 
-      !hamburger.contains(e.target)) {
-    hamburger.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-});
-
-// ACTIVE NAV
+// Active nav link
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav__link:not([data-mobile-link])');
+const navLinks = document.querySelectorAll('.nav__link');
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-  navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === `#${current}`) l.classList.add('active'); });
+  navLinks.forEach(l => {
+    l.classList.remove('active');
+    if (l.getAttribute('href') === `#${current}`) l.classList.add('active');
+  });
 });
 
-// SCROLL ANIMATIONS
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// FILTER
-const filterBtns = document.querySelectorAll('.filter-btn');
-const productCards = document.querySelectorAll('.product-card');
-filterBtns.forEach(btn => {
+// ==========================================
+// PRODUCT FILTERS
+// ==========================================
+document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const f = btn.dataset.filter;
-    productCards.forEach(card => {
-      const c = card.dataset.category;
-      if (f === 'all' || c === f) {
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (f === 'all' || card.dataset.category === f) {
         card.style.display = '';
-        card.style.opacity = '0'; card.style.transform = 'translateY(20px)';
-        setTimeout(() => { card.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
-      } else { card.style.display = 'none'; }
+        if (window.gsap) {
+          gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
+        }
+      } else {
+        card.style.display = 'none';
+      }
     });
   });
 });
 
-// COUNTDOWN
+// ==========================================
+// COUNTDOWN (to June 30, 2026)
+// ==========================================
+const offerEnd = new Date('2026-06-30T23:59:59');
 function updateCountdown() {
   const now = new Date();
-  const end = new Date(); end.setDate(now.getDate() + 2); end.setHours(23,59,59);
-  const diff = end - now;
+  const diff = offerEnd - now;
+  if (diff <= 0) {
+    document.querySelector('.offer__card')?.style.setProperty('display', 'none');
+    return;
+  }
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('days').textContent = String(d).padStart(2,'0');
-  document.getElementById('hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('minutes').textContent = String(m).padStart(2,'0');
-  document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+  document.getElementById('days').textContent = String(d).padStart(2, '0');
+  document.getElementById('hours').textContent = String(h).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(s).padStart(2, '0');
 }
-updateCountdown(); setInterval(updateCountdown, 1000);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
+// ==========================================
 // NEWSLETTER
+// ==========================================
 function handleSubscribe(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button');
   const orig = btn.textContent;
-  btn.textContent = '✓ Subscribed!'; btn.style.background = '#4CAF50';
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = '#4CAF50';
   e.target.querySelector('input').value = '';
   setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 3000);
 }
 
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-    const t = document.querySelector(this.getAttribute('href'));
-    if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
+// ==========================================
+// RIPPLE EFFECT ON BUTTONS
+// ==========================================
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    this.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
   });
 });
 
 // ==========================================
-// MODAL FORM SYSTEM - WHATSAPP
+// TOAST NOTIFICATION
 // ==========================================
-class ModalForm {
-  constructor(overlayId, formId, successSelector) {
-    this.overlay = document.getElementById(overlayId);
-    this.form = document.getElementById(formId);
-    this.successEl = this.overlay.querySelector(successSelector);
-    this.closeBtn = this.overlay.querySelector('.modal-close');
-    this.closeSuccessBtn = this.overlay.querySelector('.modal-close-success');
-    this.triggers = document.querySelectorAll(`[data-modal-trigger="${overlayId}"]`);
-    
-    this.whatsappNumber = '265992030757';
-    
-    this.bindEvents();
-  }
-
-  open() {
-    this.overlay.classList.add('active');
-    this.overlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    
-    // Reset states
-    if(this.form) {
-      this.form.style.display = 'block';
-      this.form.reset();
-    }
-    if(this.successEl) this.successEl.hidden = true;
-    
-    // Focus first input for accessibility
-    const firstInput = this.overlay.querySelector('input, select, textarea');
-    if(firstInput) firstInput.focus();
-  }
-
-  close() {
-    this.overlay.classList.remove('active');
-    this.overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    if(this.form) this.form.reset();
-  }
-
-  bindEvents() {
-    // Open triggers
-    this.triggers.forEach(btn => {
-      btn.addEventListener('click', (e) => { 
-        e.preventDefault(); 
-        this.open(); 
-      });
-    });
-    
-    // Close button
-    this.closeBtn.addEventListener('click', () => this.close());
-    
-    // Close on success button
-    if(this.closeSuccessBtn) {
-      this.closeSuccessBtn.addEventListener('click', () => this.close());
-    }
-    
-    // Close on overlay click
-    this.overlay.addEventListener('click', (e) => { 
-      if(e.target === this.overlay) this.close(); 
-    });
-    
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => { 
-      if(e.key === 'Escape' && this.overlay.classList.contains('active')) this.close(); 
-    });
-    
-    // Form submit
-    if(this.form) {
-      this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-    }
-    
-    // Trap focus within modal (basic)
-    this.overlay.addEventListener('keydown', (e) => {
-      if(e.key === 'Tab') {
-        const focusable = this.overlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        
-        if(e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if(!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    
-    // Gather data
-    const formData = new FormData(this.form);
-    const data = Object.fromEntries(formData);
-    
-    // Build WhatsApp message
-    const msg = `Hi AJ, I'd like to book a service.\n\nName: ${data.name}\nService: ${data.service}\nDate: ${data.date}\nDetails: ${data.details || 'None'}`;
-    
-    // Open WhatsApp with pre-filled message
-    const whatsappURL = `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(msg)}`;
-    window.open(whatsappURL, '_blank');
-    
-    // Show success state
-    if(this.form) this.form.style.display = 'none';
-    if(this.successEl) this.successEl.hidden = false;
-    
-    // Log for debugging
-    console.log('WhatsApp message sent:', msg);
-  }
+function showToast(msg) {
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#2D1B2E;color:white;padding:14px 28px;border-radius:50px;z-index:10000;opacity:0;transition:0.4s;';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => { toast.style.opacity = '1'; toast.style.transform = 'translateX(-50%) translateY(0)'; });
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 400);
+  }, 2200);
 }
 
-// Initialize modal when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  new ModalForm('whatsapp-modal', 'whatsapp-form', '.modal-success');
-});
+// ==========================================
+// INITIALISE CART ON LOAD
+// ==========================================
+updateCartUI();
 </script>
 </body>
 </html>
