@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AJs Cakery | Custom Celebration Cakes in Blantyre</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
-<meta name="description" content="Handcrafted cakes for birthdays, weddings & more. Order via WhatsApp. Based in Blantyre, Malawi.">
+<meta name="description" content="Handcrafted cakes for birthdays, graduations & more. Order via WhatsApp. Based in Blantyre, Malawi.">
 
 <!-- Open Graph / Social -->
 <meta property="og:title" content="AJs Cakery – Custom Celebration Cakes in Blantyre">
-<meta property="og:description" content="Handcrafted cakes for birthdays, weddings & more.">
+<meta property="og:description" content="Handcrafted cakes for birthdays, graduations & more. Three signature flavours: Chocolate, Vanilla & Red Velvet.">
 <meta property="og:image" content="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,17 +20,16 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "AJs Cakery",
-  "description": "Custom celebration cakes in Blantyre, Malawi",
+  "description": "Custom celebration cakes in Blantyre, Malawi. Three signature flavours: Chocolate, Vanilla & Red Velvet.",
   "telephone": "+265992030757",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Blantyre",
-    "addressCountry": "MW"
-  },
+  "address": { "@type": "PostalAddress", "addressLocality": "Blantyre", "addressCountry": "MW" },
   "image": "https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png",
   "url": "https://ajscakery.mw"
 }
 </script>
+
+<!-- Preload hero image -->
+<link rel="preload" as="image" href="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" fetchpriority="high">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +62,6 @@ CSS RESET & VARIABLES
 --modal-card-bg: var(--white);
 --modal-radius: 24px;
 --modal-shadow: 0 20px 50px rgba(45, 27, 46, 0.3);
---modal-transition: 0.3s ease;
 }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
@@ -368,8 +366,8 @@ background: rgba(255, 248, 240, 0.75); backdrop-filter: blur(16px);
 .form-group textarea { resize: vertical; min-height: 100px; }
 
 /* Scroll animations */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in { opacity: 0; transform: translateY(30px); }
+.fade-in.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s, transform 0.6s; }
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -379,6 +377,7 @@ background: rgba(255, 248, 240, 0.75); backdrop-filter: blur(16px);
 .about__images { height: 400px; }
 .testimonials__grid { grid-template-columns: 1fr 1fr; }
 .footer__top { grid-template-columns: 1fr 1fr; }
+.offer__card { grid-template-columns: 1fr; padding: 40px; }
 }
 @media (max-width: 768px) {
 .nav__links, .nav__whatsapp { display: none; }
@@ -388,6 +387,10 @@ background: rgba(255, 248, 240, 0.75); backdrop-filter: blur(16px);
 .newsletter { margin: 0 16px 60px; padding: 60px 24px; }
 .newsletter__form { flex-direction: column; }
 .about__features { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+.products__grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+.container { padding: 0 20px; }
 }
 </style>
 </head>
@@ -483,8 +486,8 @@ HERO SECTION
       <div class="hero__content fade-in">
         <div class="hero__badge"><span class="hero__badge-dot"></span> Proudly baking in Blantyre, Malawi – DM or WhatsApp to order</div>
         <h1 class="hero__title">Cakes Made to <i>Remember</i></h1>
-        <p class="hero__desc">Custom celebration cakes for birthdays, weddings, graduations and the moments that matter. Handcrafted in Blantyre, delivered on time.</p>
-        <div class="price-banner"><strong>Quick pricing:</strong> Cupcake boxes from K30,000, Custom cakes from K85,000. See recent examples below.</div>
+        <p class="hero__desc">Custom celebration cakes for birthdays, graduations and the moments that matter. Three signature flavours: Chocolate, Vanilla & Red Velvet. Handcrafted in Blantyre, delivered on time.</p>
+        <div class="price-banner"><strong>Quick pricing:</strong> Small cakes from K95,000, Medium from K135,000, Large from K120,000. Cupcake boxes from K30,000.</div>
         <div class="hero__actions">
           <a href="#products" class="btn btn-primary btn-lg">Explore Our Menu</a>
           <a href="#" class="btn btn-whatsapp btn-lg" id="heroWhatsappBtn">
@@ -494,14 +497,14 @@ HERO SECTION
           <a href="#" class="btn btn-outline btn-lg" id="enquiryTrigger">Quick Enquiry</a>
         </div>
         <div class="hero__stats">
-          <div class="hero__stat"><div class="hero__stat-number">50+</div><div class="hero__stat-label">Unique Flavours</div></div>
+          <div class="hero__stat"><div class="hero__stat-number">3</div><div class="hero__stat-label">Signature Flavours</div></div>
           <div class="hero__stat"><div class="hero__stat-number">10K+</div><div class="hero__stat-label">Happy Customers</div></div>
           <div class="hero__stat"><div class="hero__stat-number">4.9</div><div class="hero__stat-label">Average Rating</div></div>
         </div>
       </div>
       <div class="hero__image-wrapper fade-in">
         <div class="hero__image-container">
-          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="AJs Cakery Strawberry Dream Cupcake" class="hero__image" loading="eager">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="AJs Cakery Strawberry Dream Cupcake" class="hero__image" loading="eager" fetchpriority="high" decoding="async">
           <div class="hero__floating hero__floating--1"><div class="hero__floating-icon">⭐</div><div><div class="hero__floating-text">Top Rated</div><div class="hero__floating-sub">4.9/5 rating</div></div></div>
           <div class="hero__floating hero__floating--2"><div class="hero__floating-icon">🎁</div><div><div class="hero__floating-text">Gift Box</div><div class="hero__floating-sub">Perfect for sharing</div></div></div>
         </div>
@@ -515,12 +518,12 @@ MARQUEE
 ========================================== -->
 <div class="marquee">
   <div class="marquee__track">
-    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Local Ingredients</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 3 Signature Flavours</div>
     <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Baked Fresh Daily</div>
     <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg> Happiness Guaranteed</div>
     <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg> Blantyre Delivery</div>
     <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> Small Batch Baking</div>
-    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Local Ingredients</div>
+    <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 3 Signature Flavours</div>
     <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Baked Fresh Daily</div>
     <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg> Happiness Guaranteed</div>
     <div class="marquee__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg> Blantyre Delivery</div>
@@ -529,84 +532,71 @@ MARQUEE
 </div>
 
 <!-- ==========================================
-PRODUCTS SECTION
+PRODUCTS SECTION (3 real flavours only)
 ========================================== -->
 <section class="section products" id="products">
   <div class="container">
     <div class="products__header fade-in">
       <div>
-        <span class="script">Our Menu</span>
-        <h2>Signature Collection</h2>
-        <p class="lead" style="margin:0">Every cake is a one-of-a-kind creation. Check our Instagram for real‑time examples and exact prices.</p>
+        <span class="script">Our Flavours</span>
+        <h2>Three Signature Flavours</h2>
+        <p class="lead" style="margin:0">Chocolate, Vanilla & Red Velvet. Every cake is custom‑made for your celebration. Check our Instagram for real‑time examples.</p>
       </div>
       <div class="products__filters">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="birthdays">Birthdays</button>
-        <button class="filter-btn" data-filter="weddings">Weddings</button>
+        <button class="filter-btn" data-filter="graduations">Graduations</button>
         <button class="filter-btn" data-filter="corporate">Corporate</button>
         <button class="filter-btn" data-filter="seasonal">Seasonal</button>
       </div>
     </div>
     <div class="products__grid">
+      <!-- Product 1: Chocolate -->
       <div class="product-card fade-in" data-category="birthdays">
         <div class="product-card__img-wrapper">
-          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="Birthday Bash Cupcake" class="product-card__img" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="Chocolate Truffle Cake" class="product-card__img" loading="lazy">
         </div>
         <div class="product-card__content">
-          <div class="product-card__cat">Birthday</div>
-          <h3 class="product-card__name">Birthday Bash</h3>
-          <p class="product-card__desc">Golden raspberry swirl. Recent order: Medium K135,000.</p>
-          <div class="product-card__rating">⭐⭐⭐⭐⭐ 4.9</div>
-          <div class="product-card__price">From K30,000</div>
-          <button class="product-card__add" data-name="Birthday Bash" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            Enquire via WhatsApp
-          </button>
-        </div>
-      </div>
-      <div class="product-card fade-in" data-category="weddings">
-        <div class="product-card__img-wrapper">
-          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="Chocolate Truffle" class="product-card__img" loading="lazy">
-        </div>
-        <div class="product-card__content">
-          <div class="product-card__cat">Wedding</div>
-          <h3 class="product-card__name">Chocolate Truffle</h3>
-          <p class="product-card__desc">Rich Belgian chocolate. Small K95,000 as seen on Instagram.</p>
+          <div class="product-card__cat">Signature Flavour</div>
+          <h3 class="product-card__name">Chocolate</h3>
+          <p class="product-card__desc">Rich Belgian chocolate. Small K95,000, Medium K135,000 as seen on Instagram.</p>
           <div class="product-card__rating">⭐⭐⭐⭐⭐ 5.0</div>
-          <div class="product-card__price">From K30,000</div>
-          <button class="product-card__add" data-name="Chocolate Truffle" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png">
+          <div class="product-card__price">From K95,000</div>
+          <button class="product-card__add" data-name="Chocolate Cake" data-price="95000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             Enquire via WhatsApp
           </button>
         </div>
       </div>
+      <!-- Product 2: Vanilla -->
+      <div class="product-card fade-in" data-category="graduations">
+        <div class="product-card__img-wrapper">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="Vanilla Dream Cake" class="product-card__img" loading="lazy">
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__cat">Signature Flavour</div>
+          <h3 class="product-card__name">Vanilla</h3>
+          <p class="product-card__desc">Classic vanilla bean. Large K120,000. Perfect for birthdays and graduations.</p>
+          <div class="product-card__rating">⭐⭐⭐⭐⭐ 4.9</div>
+          <div class="product-card__price">From K95,000</div>
+          <button class="product-card__add" data-name="Vanilla Cake" data-price="95000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Enquire via WhatsApp
+          </button>
+        </div>
+      </div>
+      <!-- Product 3: Red Velvet -->
       <div class="product-card fade-in" data-category="seasonal">
         <div class="product-card__img-wrapper">
-          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png" alt="Lemon Zest" class="product-card__img" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="Red Velvet Cake" class="product-card__img" loading="lazy">
         </div>
         <div class="product-card__content">
-          <div class="product-card__cat">Seasonal</div>
-          <h3 class="product-card__name">Lemon Zest</h3>
-          <p class="product-card__desc">Tangy lemon curd. Perfect for summer.</p>
+          <div class="product-card__cat">Signature Flavour</div>
+          <h3 class="product-card__name">Red Velvet</h3>
+          <p class="product-card__desc">Smooth cream cheese finish. Small K95,000. A customer favourite for all occasions.</p>
           <div class="product-card__rating">⭐⭐⭐⭐⭐ 4.8</div>
-          <div class="product-card__price">From K30,000</div>
-          <button class="product-card__add" data-name="Lemon Zest" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            Enquire via WhatsApp
-          </button>
-        </div>
-      </div>
-      <div class="product-card fade-in" data-category="birthdays">
-        <div class="product-card__img-wrapper">
-          <img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="Strawberry Dream" class="product-card__img" loading="lazy">
-        </div>
-        <div class="product-card__content">
-          <div class="product-card__cat">Birthday</div>
-          <h3 class="product-card__name">Strawberry Dream</h3>
-          <p class="product-card__desc">Fresh strawberry frosting. Recent order large K120,000.</p>
-          <div class="product-card__rating">⭐⭐⭐⭐⭐ 4.7</div>
-          <div class="product-card__price">From K30,000</div>
-          <button class="product-card__add" data-name="Strawberry Dream" data-price="30000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png">
+          <div class="product-card__price">From K95,000</div>
+          <button class="product-card__add" data-name="Red Velvet Cake" data-price="95000" data-img="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             Enquire via WhatsApp
           </button>
@@ -628,10 +618,10 @@ INSTAGRAM FEED
     <h2>Fresh from Instagram</h2>
     <p class="lead">See what's baking right now. DM us on Instagram <a href="https://instagram.com/____ajs_cakery" target="_blank" style="color:var(--pink-400);">@____ajs_cakery</a> to order yours.</p>
     <div class="insta-grid">
-      <div class="insta-item"><a href="https://www.instagram.com/p/DYjV-4CIV2a/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="Medium chocolate cake K135,000"></a></div>
-      <div class="insta-item"><a href="https://www.instagram.com/p/DYjKmnFI3h9/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="Minecraft themed small cake K107,000"></a></div>
-      <div class="insta-item"><a href="https://www.instagram.com/p/DYexYJxIXnq/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png" alt="Small chocolate cake K95,000"></a></div>
-      <div class="insta-item"><a href="https://www.instagram.com/p/DYW9_sNoWwg/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="Large vanilla cake K120,000"></a></div>
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYjV-4CIV2a/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/197f8091c-b089-4063-9317-fdd9e2226bbc.png" alt="Medium chocolate cake K135,000" loading="lazy"></a></div>
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYjKmnFI3h9/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1f0b7a70e-63a0-4377-91b5-de8be429b639.png" alt="Minecraft themed small cake K107,000" loading="lazy"></a></div>
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYexYJxIXnq/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/15dadc949-a04b-4810-87f8-8d047d24218c.png" alt="Small chocolate cake K95,000" loading="lazy"></a></div>
+      <div class="insta-item"><a href="https://www.instagram.com/p/DYW9_sNoWwg/" target="_blank"><img src="https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png" alt="Large vanilla cake K120,000" loading="lazy"></a></div>
     </div>
   </div>
 </section>
@@ -650,12 +640,12 @@ CUSTOM ORDER WORKFLOW
       <div class="custom-order__step fade-in">
         <div class="custom-order__icon">💬</div>
         <h3>1. Tell Us Your Vision</h3>
-        <p>DM us on WhatsApp or Instagram with your event details, theme, and preferences.</p>
+        <p>DM us on WhatsApp or Instagram with your event details, theme, and preferred flavour.</p>
       </div>
       <div class="custom-order__step fade-in">
         <div class="custom-order__icon">🎨</div>
         <h3>2. We Design and Confirm</h3>
-        <p>You'll receive a mockup and quote within 24 hours.</p>
+        <p>You'll receive a mockup and quote within 24 hours. No surprises.</p>
       </div>
       <div class="custom-order__step fade-in">
         <div class="custom-order__icon">🎂</div>
@@ -681,12 +671,12 @@ ABOUT SECTION
         <div class="about__experience"><span class="about__exp-number">1:1</span><span class="about__exp-text">Personal<br>Service</span></div>
       </div>
       <div class="about__content fade-in">
-        <span class="script">One Baker, One Promise</span>
+        <span class="script">One Baker, Three Flavours</span>
         <h2>Every Cake Is Made by Someone Who Cares</h2>
-        <p class="about__text">I'm AJ – the hands behind every cake, the eyes checking every detail. No factories, no shortcuts. Just one person in a Blantyre kitchen.</p>
+        <p class="about__text">I'm AJ – the hands behind every cake, the eyes checking every detail. No factories, no shortcuts. Just one person in a Blantyre kitchen, perfecting three signature flavours: Chocolate, Vanilla, and Red Velvet.</p>
         <p class="about__text">When you order from AJs Cakery, you're not getting a faceless brand. You're getting a partner who remembers your event matters.</p>
         <div class="about__features">
-          <div class="about__feat"><div class="about__feat-icon">✨</div><div><div class="about__feat-title">Made Just for You</div><div class="about__feat-desc">Custom designs, your colours</div></div></div>
+          <div class="about__feat"><div class="about__feat-icon">🎂</div><div><div class="about__feat-title">3 Signature Flavours</div><div class="about__feat-desc">Chocolate, Vanilla & Red Velvet</div></div></div>
           <div class="about__feat"><div class="about__feat-icon">✅</div><div><div class="about__feat-title">On-Time Guarantee</div><div class="about__feat-desc">Your cake arrives when promised</div></div></div>
           <div class="about__feat"><div class="about__feat-icon">🌿</div><div><div class="about__feat-title">Local Ingredients</div><div class="about__feat-desc">Supporting Malawian suppliers</div></div></div>
           <div class="about__feat"><div class="about__feat-icon">🎁</div><div><div class="about__feat-title">Gift Packaging</div><div class="about__feat-desc">Beautiful presentation</div></div></div>
@@ -706,7 +696,7 @@ OFFER BANNER
       <div class="offer__content">
         <div class="offer__discount">20% Off</div>
         <h2 class="offer__title">Summer Celebration Special</h2>
-        <p class="offer__desc">Get 20% off our entire seasonal collection! Use code <strong style="color:var(--pink-400);">CELEBRATE20</strong> at checkout. Limited time offer – ends June 30, 2026.</p>
+        <p class="offer__desc">Get 20% off any cake when you quote <strong style="color:var(--pink-400);">CELEBRATE20</strong>. Limited time – ends June 30, 2026.</p>
         <div class="offer__countdown">
           <div class="offer__count-item"><div class="offer__count-number" id="days">00</div><div class="offer__count-label">Days</div></div>
           <div class="offer__count-item"><div class="offer__count-number" id="hours">00</div><div class="offer__count-label">Hours</div></div>
@@ -734,7 +724,7 @@ TESTIMONIALS
       <div class="testimonial-card fade-in">
         <div class="testimonial-card__quote">"</div>
         <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-card__text">The Birthday Bash cupcakes were divine! AJ made my daughter's party unforgettable. Fresh, beautiful, and exactly on time.</p>
+        <p class="testimonial-card__text">The Chocolate cake was divine! AJ made my daughter's party unforgettable. Fresh, beautiful, and exactly on time.</p>
         <div class="testimonial-card__author">
           <div class="testimonial-card__avatar">T</div>
           <div><div class="testimonial-card__name">T. Banda</div><div class="testimonial-card__role">Recent order · Blantyre</div></div>
@@ -743,7 +733,7 @@ TESTIMONIALS
       <div class="testimonial-card fade-in">
         <div class="testimonial-card__quote">"</div>
         <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-card__text">Chocolate Truffle is my go‑to. Consistent quality every single time. Highly recommend for any celebration.</p>
+        <p class="testimonial-card__text">Red Velvet is my go‑to. Consistent quality every single time. Highly recommend for any celebration.</p>
         <div class="testimonial-card__author">
           <div class="testimonial-card__avatar">J</div>
           <div><div class="testimonial-card__name">J. Mwale</div><div class="testimonial-card__role">Regular customer · Blantyre</div></div>
@@ -752,10 +742,10 @@ TESTIMONIALS
       <div class="testimonial-card fade-in">
         <div class="testimonial-card__quote">"</div>
         <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-card__text">Custom wedding cupcakes that were almost too pretty to eat. Our guests couldn't stop talking about them.</p>
+        <p class="testimonial-card__text">Custom Vanilla cupcakes that were almost too pretty to eat. Our guests couldn't stop talking about them.</p>
         <div class="testimonial-card__author">
           <div class="testimonial-card__avatar">E</div>
-          <div><div class="testimonial-card__name">E. & M.</div><div class="testimonial-card__role">Wedding · Blantyre</div></div>
+          <div><div class="testimonial-card__name">E. & M.</div><div class="testimonial-card__role">Graduation · Blantyre</div></div>
         </div>
       </div>
     </div>
@@ -786,7 +776,7 @@ FOOTER
     <div class="footer__top">
       <div>
         <div class="nav__logo"><div class="nav__logo-icon">🎂</div>AJs <span>Cakery</span></div>
-        <p class="footer__brand-desc">Handcrafted celebration cakes in Blantyre, Malawi. Delivery available within Blantyre city limits.</p>
+        <p class="footer__brand-desc">Handcrafted celebration cakes in Blantyre, Malawi. Three signature flavours: Chocolate, Vanilla & Red Velvet. Delivery within Blantyre city limits.</p>
         <div class="footer__social">
           <a href="https://instagram.com/____ajs_cakery" class="footer__social-link" target="_blank" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
@@ -807,13 +797,13 @@ FOOTER
         </div>
       </div>
       <div>
-        <h3 class="footer__heading">Categories</h3>
+        <h3 class="footer__heading">Flavours</h3>
         <div class="footer__links">
-          <a href="#" class="footer__link">Birthday Cakes</a>
-          <a href="#" class="footer__link">Wedding Cakes</a>
-          <a href="#" class="footer__link">Corporate Orders</a>
+          <a href="#" class="footer__link">Chocolate</a>
+          <a href="#" class="footer__link">Vanilla</a>
+          <a href="#" class="footer__link">Red Velvet</a>
+          <a href="#" class="footer__link">Custom Themes</a>
           <a href="#" class="footer__link">Cupcake Boxes</a>
-          <a href="#" class="footer__link">Seasonal Specials</a>
         </div>
       </div>
       <div>
@@ -846,7 +836,7 @@ FLOATING WHATSAPP (MOBILE)
 <a href="https://wa.me/265992030757?text=Hello%20AJ!%20I'd%20like%20to%20order%20a%20cake." class="floating-whatsapp" id="floatingWhatsapp" target="_blank" aria-label="Chat on WhatsApp">💬</a>
 
 <!-- ==========================================
-ENQUIRY MODAL
+ENQUIRY MODAL (without wedding option)
 ========================================== -->
 <div class="modal-overlay" id="enquiry-modal" aria-hidden="true">
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="enquiry-title">
@@ -863,7 +853,6 @@ ENQUIRY MODAL
         <select id="enq-service" name="service" required>
           <option value="">Select an option</option>
           <option value="Birthday Cake">Birthday Cake</option>
-          <option value="Wedding Cake">Wedding Cake</option>
           <option value="Graduation Cake">Graduation Cake</option>
           <option value="Corporate Order">Corporate Order</option>
           <option value="Cupcake Box">Cupcake Box (6 pcs)</option>
@@ -872,12 +861,21 @@ ENQUIRY MODAL
         </select>
       </div>
       <div class="form-group">
+        <label for="enq-flavour">Preferred Flavour</label>
+        <select id="enq-flavour" name="flavour">
+          <option value="">Any flavour</option>
+          <option value="Chocolate">Chocolate</option>
+          <option value="Vanilla">Vanilla</option>
+          <option value="Red Velvet">Red Velvet</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label for="enq-date">Preferred Date (optional)</label>
         <input type="date" id="enq-date" name="date">
       </div>
       <div class="form-group">
         <label for="enq-details">Additional Details</label>
-        <textarea id="enq-details" name="details" rows="4" placeholder="Theme, colours, size, dietary requirements, delivery address..."></textarea>
+        <textarea id="enq-details" name="details" rows="4" placeholder="Theme, colours, size, delivery address..."></textarea>
       </div>
       <button type="submit" class="btn btn-primary btn-full">Continue to WhatsApp</button>
     </form>
@@ -885,20 +883,24 @@ ENQUIRY MODAL
 </div>
 
 <!-- ==========================================
-GSAP & JAVASCRIPT
+GSAP & JAVASCRIPT (deferred + performance optimised)
 ========================================== -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js" defer></script>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+
 // ==========================================
 // GSAP REGISTRATION
 // ==========================================
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+if (window.gsap) {
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+}
 
 // ==========================================
-// PREMIUM MENU SYSTEM
+// PREMIUM MENU SYSTEM (simplified timeline)
 // ==========================================
 const menuOverlay = document.getElementById('menuOverlay');
 const menuLeft = document.getElementById('menuLeft');
@@ -914,12 +916,12 @@ function createMenuTimeline() {
   }
   menuTl = gsap.timeline({ paused: true, reversed: true });
   menuTl
-    .to(menuOverlay, { y: "0%", duration: 0.9, ease: "power4.inOut" })
-    .to(menuLeft, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.5")
-    .to(menuRight, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.6")
-    .from(".menu-left nav a", { y: 40, opacity: 0, stagger: 0.08, duration: 0.6 }, "-=0.3")
-    .to(".menu-right .menu-image", { scale: 1, duration: 0.8 }, "-=0.5")
-    .to(".menu-brand", { opacity: 1, y: 0, duration: 0.5 }, "-=0.2");
+    .to(menuOverlay, { y: "0%", duration: 0.6, ease: "power3.inOut" })
+    .to(menuLeft, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.3")
+    .to(menuRight, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.4")
+    .from(".menu-left nav a", { y: 30, opacity: 0, stagger: 0.05, duration: 0.4 }, "-=0.2")
+    .to(".menu-right .menu-image", { scale: 1, duration: 0.5 }, "-=0.3")
+    .to(".menu-brand", { opacity: 1, y: 0, duration: 0.4 }, "-=0.1");
   return menuTl;
 }
 
@@ -1004,7 +1006,7 @@ if (!('ontouchstart' in window) && window.gsap) {
 }
 
 // ==========================================
-// CART SYSTEM (with localStorage)
+// CART SYSTEM
 // ==========================================
 const CURRENCY = 'MWK';
 function formatPrice(amount) { return `${CURRENCY} ${amount.toLocaleString('en-MW')}`; }
@@ -1026,24 +1028,28 @@ function updateCartUI() {
     cartBadge.textContent = cartState.length;
     cartBody.innerHTML = cartState.map((item, idx) => `
       <div class="cart-item">
-        <img src="${item.img || 'https://image.qwenlm.ai/public_source/0dc42c01-f158-4b70-bc50-303ec55e8772/1a39b17f2-b184-4d7a-8d98-e52cea4bd7e9.png'}" class="cart-item__img" alt="${item.name}">
+        <img src="${item.img || ''}" class="cart-item__img" alt="${item.name}">
         <div class="cart-item__info">
           <div class="cart-item__name">${item.name}</div>
           <div class="cart-item__price">${formatPrice(item.price)}</div>
-          <button style="color:var(--pink-400); font-size:0.8rem; font-weight:600;" onclick="removeFromCart(${idx})">Remove</button>
+          <button style="color:var(--pink-400); font-size:0.8rem; font-weight:600;" data-remove="${idx}">Remove</button>
         </div>
       </div>
     `).join('');
+    
+    // Add event listeners to remove buttons
+    cartBody.querySelectorAll('[data-remove]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        cartState.splice(parseInt(this.dataset.remove), 1);
+        updateCartUI();
+        showToast('Item removed');
+      });
+    });
   }
   const total = cartState.reduce((sum, item) => sum + item.price, 0);
   cartTotal.textContent = formatPrice(total);
   saveCart();
 }
-window.removeFromCart = function(index) {
-  cartState.splice(index, 1);
-  updateCartUI();
-  showToast('Item removed');
-};
 
 // Add to cart
 document.querySelectorAll('.product-card__add').forEach(btn => {
@@ -1055,7 +1061,6 @@ document.querySelectorAll('.product-card__add').forEach(btn => {
     updateCartUI();
     showToast(`Added! ${formatPrice(price)}`);
     
-    // Visual feedback
     const orig = this.innerHTML;
     this.innerHTML = '✓ Added!';
     this.style.background = '#4CAF50';
@@ -1070,7 +1075,7 @@ document.querySelectorAll('.product-card__add').forEach(btn => {
   });
 });
 
-// Cart checkout → pre‑filled WhatsApp
+// Cart checkout
 cartCheckoutBtn.addEventListener('click', () => {
   if (cartState.length === 0) return;
   const itemsList = cartState.map(item => `• ${item.name} – ${formatPrice(item.price)}`).join('\n');
@@ -1105,7 +1110,7 @@ document.getElementById('customOrderBtn').addEventListener('click', (e) => {
 });
 
 // ==========================================
-// ENQUIRY MODAL (structured pre‑fill)
+// ENQUIRY MODAL
 // ==========================================
 const enquiryModal = document.getElementById('enquiry-modal');
 const enquiryForm = document.getElementById('enquiry-form');
@@ -1123,7 +1128,6 @@ function closeEnquiryModal() {
   document.body.style.overflow = '';
 }
 
-// Trigger buttons
 document.getElementById('enquiryTrigger').addEventListener('click', (e) => {
   e.preventDefault();
   openEnquiryModal();
@@ -1133,7 +1137,6 @@ document.getElementById('menuEnquiryBtn').addEventListener('click', (e) => {
   openEnquiryModal();
 });
 
-// Close buttons
 enquiryModal.querySelector('.modal-close').addEventListener('click', closeEnquiryModal);
 enquiryModal.addEventListener('click', (e) => {
   if (e.target === enquiryModal) closeEnquiryModal();
@@ -1142,12 +1145,12 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && enquiryModal.classList.contains('active')) closeEnquiryModal();
 });
 
-// Form submit → build pre‑filled WhatsApp message
 enquiryForm.addEventListener('submit', (e) => {
   e.preventDefault();
   
   const name = document.getElementById('enq-name').value.trim();
   const service = document.getElementById('enq-service').value;
+  const flavour = document.getElementById('enq-flavour').value;
   const date = document.getElementById('enq-date').value;
   const details = document.getElementById('enq-details').value.trim();
   
@@ -1155,6 +1158,7 @@ enquiryForm.addEventListener('submit', (e) => {
     `Hi AJ! My name is ${name}.`,
     '',
     `I'm interested in: ${service || 'a custom cake'}`,
+    flavour ? `Preferred flavour: ${flavour}` : '',
     date ? `Preferred date: ${date}` : '',
     details ? `Additional details: ${details}` : '',
     '',
@@ -1171,18 +1175,39 @@ enquiryForm.addEventListener('submit', (e) => {
 });
 
 // ==========================================
-// SCROLL ANIMATIONS (GSAP ScrollTrigger)
+// SCROLL ANIMATIONS (delayed with requestIdleCallback)
 // ==========================================
-if (window.gsap) {
-  gsap.utils.toArray('.fade-in').forEach(el => {
-    gsap.fromTo(el, 
-      { opacity: 0, y: 30 },
-      { 
-        opacity: 1, y: 0, duration: 0.6,
-        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
-      }
-    );
-  });
+if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+  
+  if (window.requestIdleCallback) {
+    requestIdleCallback(() => {
+      gsap.utils.toArray('.fade-in').forEach(el => {
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 85%',
+          onEnter: () => {
+            gsap.to(el, { opacity: 1, y: 0, duration: 0.6 });
+          },
+          once: true
+        });
+      });
+    });
+  } else {
+    // Fallback for browsers without requestIdleCallback
+    setTimeout(() => {
+      gsap.utils.toArray('.fade-in').forEach(el => {
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 85%',
+          onEnter: () => {
+            gsap.to(el, { opacity: 1, y: 0, duration: 0.6 });
+          },
+          once: true
+        });
+      });
+    }, 200);
+  }
 }
 
 // ==========================================
@@ -1234,7 +1259,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // ==========================================
-// COUNTDOWN (to June 30, 2026)
+// COUNTDOWN
 // ==========================================
 const offerEnd = new Date('2026-06-30T23:59:59');
 function updateCountdown() {
@@ -1305,6 +1330,8 @@ function showToast(msg) {
 // INITIALISE CART ON LOAD
 // ==========================================
 updateCartUI();
+
+}); // End DOMContentLoaded
 </script>
 </body>
 </html>
